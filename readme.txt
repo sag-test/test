@@ -1,1 +1,3 @@
-Hello from GitHub once more CHANGEDDD!!
+Hello from GitHub now!
+And even more hello!
+Salutations too!
