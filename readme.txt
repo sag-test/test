@@ -1,2 +1,1 @@
-Time: 2016-01-07T00:07:10.701
-Hello GIT Repository! 
+Hello GIT Repository! Changed just now!
