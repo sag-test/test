@@ -1,0 +1,831 @@
+<asset_composite xmlns="http://namespaces.softwareag.com/acdl/1.0" targetNamespace="http://namespaces.softwareag.com/webMethods/IS" name="DBPcsTpnBusinessServices" runtimeVersion="8.2.2.0">
+  <implementation.generic type="ispackage" />
+  <buildInfo name="MinimumTargetRuntimeVersion" value="8.2.2.0" />
+  <buildInfo name="BuildVersion" value="1" />
+  <buildInfo name="BuildTimestamp" value="2016-05-17T13:49:51" />
+  <property name="activatePkgOnInstall" displayName="Activate Package On Install">
+    <value>true</value>
+  </property>
+  <property name="archivePkgOnInstall" displayName="Archive Package On Install">
+    <value>true</value>
+  </property>
+  <property name="compilePackage" displayName="Compile Package On Install">
+    <value>true</value>
+  </property>
+  <property name="fragPackage" displayName="Fragment Package On Install">
+    <value>true</value>
+  </property>
+  <property name="clearACLs" displayName="Delete ACLs for the assets from the target Integration Server">
+    <value>false</value>
+  </property>
+  <property name="disallowActivePackageInstall" displayName="disallowActivePackageInstall">
+    <value>false</value>
+  </property>
+  <property name="packageExecutionCheck" displayName="packageExecutionCheck">
+    <value>0</value>
+  </property>
+  <property name="suspendTriggersDuringDeploy" displayName="Suspend Triggers During Deployment">
+    <value>false</value>
+  </property>
+  <property name="syncDocTypesToBroker" displayName="Synchronize Document Types To Broker During Deployment">
+    <value>true</value>
+  </property>
+  <asset name="ISPackage.DBPcsTpnBusinessServices" displayName="DBPcsTpnBusinessServices">
+    <implementation.generic type="ispackage" />
+    <dependsOn>IS:ISPackage.DBPcsTpnDocuments</dependsOn>
+    <dependsOn>IS:ISPackage.DBPcsTpnProcessesImpl</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung_.docTypes.UpdateDossierStatusPortType_UpdateDossierStatus_Output" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung_.docTypes:UpdateDossierStatusPortType_UpdateDossierStatus_Output">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung_.docTypes.schema_PCS_DossierBearbeitungStatusVerwaltung" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung_.docTypes:schema_PCS_DossierBearbeitungStatusVerwaltung">
+    <implementation.generic type="isschema" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung_.docTypes.UpdateDossierStatusPortType_UpdateDossierProgressStatus_Input" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung_.docTypes:UpdateDossierStatusPortType_UpdateDossierProgressStatus_Input">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung_.docTypes.UpdateDossierStatusPortType_UpdateDossierStatus_Input" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung_.docTypes:UpdateDossierStatusPortType_UpdateDossierStatus_Input">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung_.docTypes.UpdateDossierStatusPortType_UpdateDossierProgressStatus_Output" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung_.docTypes:UpdateDossierStatusPortType_UpdateDossierProgressStatus_Output">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung_.connectors.UpdateDossierStatusPortType_UpdateDossierProgressStatus" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung_.connectors:UpdateDossierStatusPortType_UpdateDossierProgressStatus">
+    <implementation.generic type="iswsconnector" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung_.docTypes.UpdateDossierStatusPortType_UpdateDossierProgressStatus_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung_.docTypes.UpdateDossierStatusPortType_UpdateDossierProgressStatus_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung_.connectors.UpdateDossierStatusPortType_UpdateDossierStatus" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung_.connectors:UpdateDossierStatusPortType_UpdateDossierStatus">
+    <implementation.generic type="iswsconnector" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung_.docTypes.UpdateDossierStatusPortType_UpdateDossierStatus_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung_.docTypes.UpdateDossierStatusPortType_UpdateDossierStatus_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors.BPM_PCS_Meldung_PortType_sendTrassenAnmeldung" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors:BPM_PCS_Meldung_PortType_sendTrassenAnmeldung">
+    <implementation.generic type="iswsconnector" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendTrassenAnmeldung_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendTrassenAnmeldung_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors.BPM_PCS_Meldung_PortType_sendAblehnungOhneUeberarbeitung" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors:BPM_PCS_Meldung_PortType_sendAblehnungOhneUeberarbeitung">
+    <implementation.generic type="iswsconnector" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendAblehnungOhneUeberarbeitung_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendAblehnungOhneUeberarbeitung_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors.BPM_PCS_Meldung_PortType_sendUpdateAuftragStatus" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors:BPM_PCS_Meldung_PortType_sendUpdateAuftragStatus">
+    <implementation.generic type="iswsconnector" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendUpdateAuftragStatus_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendUpdateAuftragStatus_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors.BPM_PCS_Meldung_PortType_sendStudienanmeldung" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors:BPM_PCS_Meldung_PortType_sendStudienanmeldung">
+    <implementation.generic type="iswsconnector" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendStudienanmeldung_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendStudienanmeldung_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors.BPM_PCS_Meldung_PortType_sendAenderungNachAngebot" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors:BPM_PCS_Meldung_PortType_sendAenderungNachAngebot">
+    <implementation.generic type="iswsconnector" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendAenderungNachAngebot_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendAenderungNachAngebot_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors.BPM_PCS_Meldung_PortType_sendAblehnungTrassenangebotMitUeberarbeitung" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors:BPM_PCS_Meldung_PortType_sendAblehnungTrassenangebotMitUeberarbeitung">
+    <implementation.generic type="iswsconnector" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendAblehnungTrassenangebotMitUeberarbeitung_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendAblehnungTrassenangebotMitUeberarbeitung_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors.BPM_PCS_Meldung_PortType_sendStornierungVertrag" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors:BPM_PCS_Meldung_PortType_sendStornierungVertrag">
+    <implementation.generic type="iswsconnector" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendStornierungVertrag_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendStornierungVertrag_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors.BPM_PCS_Meldung_PortType_sendTrassenAbmeldung" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors:BPM_PCS_Meldung_PortType_sendTrassenAbmeldung">
+    <implementation.generic type="iswsconnector" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendTrassenAbmeldung_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendTrassenAbmeldung_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors.BPM_PCS_Meldung_PortType_sendBerechtigteBeanstandung" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors:BPM_PCS_Meldung_PortType_sendBerechtigteBeanstandung">
+    <implementation.generic type="iswsconnector" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendBerechtigteBeanstandung_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendBerechtigteBeanstandung_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors.BPM_PCS_Meldung_PortType_sendAnnahmeAngebot" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors:BPM_PCS_Meldung_PortType_sendAnnahmeAngebot">
+    <implementation.generic type="iswsconnector" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendAnnahmeAngebot_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendAnnahmeAngebot_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors.BPM_PCS_Meldung_PortType_sendDossierAuftraege" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors:BPM_PCS_Meldung_PortType_sendDossierAuftraege">
+    <implementation.generic type="iswsconnector" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendDossierAuftraege_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendDossierAuftraege_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendAenderungNachAngebot_Output" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:BPM_PCS_Meldung_PortType_sendAenderungNachAngebot_Output">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendBerechtigteBeanstandung_Input" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:BPM_PCS_Meldung_PortType_sendBerechtigteBeanstandung_Input">
+    <implementation.generic type="isdocumenttype" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_ERGFPL</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_BAU_INFO</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_TAKT</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_ns2_VZR</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_GGVE</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_ns3_VZR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendAnnahmeAngebot_Input" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:BPM_PCS_Meldung_PortType_sendAnnahmeAngebot_Input">
+    <implementation.generic type="isdocumenttype" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_ERGFPL</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_BAU_INFO</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_TAKT</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_ns2_VZR</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_GGVE</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_ns3_VZR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendAenderungNachAngebot_Input" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:BPM_PCS_Meldung_PortType_sendAenderungNachAngebot_Input">
+    <implementation.generic type="isdocumenttype" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_ERGFPL</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_BAU_INFO</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_TAKT</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_ns2_VZR</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_GGVE</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_ns3_VZR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendUpdateAuftragStatus_Output" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:BPM_PCS_Meldung_PortType_sendUpdateAuftragStatus_Output">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendTrassenAnmeldung_Input" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:BPM_PCS_Meldung_PortType_sendTrassenAnmeldung_Input">
+    <implementation.generic type="isdocumenttype" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_ERGFPL</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_BAU_INFO</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_TAKT</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_ns2_VZR</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_GGVE</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_ns3_VZR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_TAKT" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:docType_dt_TAKT">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendStudienanmeldung_Input" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:BPM_PCS_Meldung_PortType_sendStudienanmeldung_Input">
+    <implementation.generic type="isdocumenttype" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_ERGFPL</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_BAU_INFO</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_TAKT</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_ns2_VZR</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_GGVE</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_ns3_VZR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_ns3_VZR" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:docType_ns3_VZR">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendDossierAuftraege_Input" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:BPM_PCS_Meldung_PortType_sendDossierAuftraege_Input">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.schema_TPN_Trassenbestellung_5" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:schema_TPN_Trassenbestellung_5">
+    <implementation.generic type="isschema" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.schema_TPN_Trassenbestellung_4" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:schema_TPN_Trassenbestellung_4">
+    <implementation.generic type="isschema" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.schema_TPN_Trassenbestellung_3" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:schema_TPN_Trassenbestellung_3">
+    <implementation.generic type="isschema" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.schema_TPN_Trassenbestellung_2" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:schema_TPN_Trassenbestellung_2">
+    <implementation.generic type="isschema" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendAnnahmeAngebot_Output" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:BPM_PCS_Meldung_PortType_sendAnnahmeAngebot_Output">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendBerechtigteBeanstandung_Output" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:BPM_PCS_Meldung_PortType_sendBerechtigteBeanstandung_Output">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendStudienanmeldung_Output" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:BPM_PCS_Meldung_PortType_sendStudienanmeldung_Output">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendStornierungVertrag_Output" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:BPM_PCS_Meldung_PortType_sendStornierungVertrag_Output">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_GGVE" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:docType_dt_GGVE">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_ERGFPL" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:docType_dt_ERGFPL">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendStornierungVertrag_Input" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:BPM_PCS_Meldung_PortType_sendStornierungVertrag_Input">
+    <implementation.generic type="isdocumenttype" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_ERGFPL</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_BAU_INFO</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_TAKT</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_ns2_VZR</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_GGVE</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_ns3_VZR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendTrassenAbmeldung_Input" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:BPM_PCS_Meldung_PortType_sendTrassenAbmeldung_Input">
+    <implementation.generic type="isdocumenttype" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_ERGFPL</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_BAU_INFO</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_TAKT</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_ns2_VZR</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_GGVE</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_ns3_VZR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.schema_TPN_Trassenbestellung" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:schema_TPN_Trassenbestellung">
+    <implementation.generic type="isschema" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendTrassenAnmeldung_Output" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:BPM_PCS_Meldung_PortType_sendTrassenAnmeldung_Output">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_BAU_INFO" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:docType_dt_BAU_INFO">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendUpdateAuftragStatus_Input" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:BPM_PCS_Meldung_PortType_sendUpdateAuftragStatus_Input">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendDossierAuftraege_Output" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:BPM_PCS_Meldung_PortType_sendDossierAuftraege_Output">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendAblehnungTrassenangebotMitUeberarbeitung_Input" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:BPM_PCS_Meldung_PortType_sendAblehnungTrassenangebotMitUeberarbeitung_Input">
+    <implementation.generic type="isdocumenttype" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_ERGFPL</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_BAU_INFO</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_TAKT</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_ns2_VZR</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_GGVE</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_ns3_VZR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendTrassenAbmeldung_Output" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:BPM_PCS_Meldung_PortType_sendTrassenAbmeldung_Output">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendAblehnungTrassenangebotMitUeberarbeitung_Output" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:BPM_PCS_Meldung_PortType_sendAblehnungTrassenangebotMitUeberarbeitung_Output">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_ns2_VZR" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:docType_ns2_VZR">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendAblehnungOhneUeberarbeitung_Input" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:BPM_PCS_Meldung_PortType_sendAblehnungOhneUeberarbeitung_Input">
+    <implementation.generic type="isdocumenttype" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_ERGFPL</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_BAU_INFO</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_TAKT</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_ns2_VZR</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_dt_GGVE</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.docType_ns3_VZR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendAblehnungOhneUeberarbeitung_Output" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes:BPM_PCS_Meldung_PortType_sendAblehnungOhneUeberarbeitung_Output">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierVerwaltung_.connectors.GetPathIndicatorsOfDossierPortType_getPathIndicatorsOfDossier" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierVerwaltung_.connectors:GetPathIndicatorsOfDossierPortType_getPathIndicatorsOfDossier">
+    <implementation.generic type="iswsconnector" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierVerwaltung_.docTypes.GetPathIndicatorsOfDossierPortType_getPathIndicatorsOfDossier_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierVerwaltung_.docTypes.GetPathIndicatorsOfDossierPortType_getPathIndicatorsOfDossier_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierVerwaltung</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierVerwaltung_.docTypes.GetPathIndicatorsOfDossierPortType_getPathIndicatorsOfDossier_Output" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierVerwaltung_.docTypes:GetPathIndicatorsOfDossierPortType_getPathIndicatorsOfDossier_Output">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierVerwaltung_.docTypes.schema_PCS_DossierVerwaltung" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierVerwaltung_.docTypes:schema_PCS_DossierVerwaltung">
+    <implementation.generic type="isschema" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierVerwaltung_.docTypes.GetPathIndicatorsOfDossierPortType_getPathIndicatorsOfDossier_Input" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierVerwaltung_.docTypes:GetPathIndicatorsOfDossierPortType_getPathIndicatorsOfDossier_Input">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes.schema_PCS_Trassenangebot_4" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes:schema_PCS_Trassenangebot_4">
+    <implementation.generic type="isschema" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes.schema_PCS_Trassenangebot_3" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes:schema_PCS_Trassenangebot_3">
+    <implementation.generic type="isschema" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes.schema_PCS_Trassenangebot_2" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes:schema_PCS_Trassenangebot_2">
+    <implementation.generic type="isschema" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes.docType_ns2_VZR" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes:docType_ns2_VZR">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes.UpdatePCSTrassenAngebotPortType_updatePCS_TrassenAngebot_Output" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes:UpdatePCSTrassenAngebotPortType_updatePCS_TrassenAngebot_Output">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes.docType_ns3_VZR" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes:docType_ns3_VZR">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes.docType_dt_TAKT" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes:docType_dt_TAKT">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes.docType_dt_BAU_INFO" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes:docType_dt_BAU_INFO">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes.schema_PCS_Trassenangebot" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes:schema_PCS_Trassenangebot">
+    <implementation.generic type="isschema" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes.UpdatePCSTrassenAngebotPortType_updatePCS_TrassenAngebot_Input" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes:UpdatePCSTrassenAngebotPortType_updatePCS_TrassenAngebot_Input">
+    <implementation.generic type="isdocumenttype" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes.docType_dt_ERGFPL</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes.docType_dt_BAU_INFO</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes.docType_dt_TAKT</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes.docType_ns2_VZR</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes.docType_dt_GGVE</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes.docType_ns3_VZR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes.docType_dt_GGVE" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes:docType_dt_GGVE">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes.docType_dt_ERGFPL" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes:docType_dt_ERGFPL">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.connectors.UpdatePCSTrassenAngebotPortType_updatePCS_TrassenAngebot" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.connectors:UpdatePCSTrassenAngebotPortType_updatePCS_TrassenAngebot">
+    <implementation.generic type="iswsconnector" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes.UpdatePCSTrassenAngebotPortType_updatePCS_TrassenAngebot_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes.UpdatePCSTrassenAngebotPortType_updatePCS_TrassenAngebot_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.connectors.UpdatePCSTrassenAngebotPortType_updatePCS_TrassenAngebot" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.connectors:UpdatePCSTrassenAngebotPortType_updatePCS_TrassenAngebot">
+    <implementation.generic type="iswsconnector" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes.UpdatePCSTrassenAngebotPortType_updatePCS_TrassenAngebot_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes.UpdatePCSTrassenAngebotPortType_updatePCS_TrassenAngebot_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes.UpdatePCSTrassenAngebotPortType_updatePCS_TrassenAngebot_Output" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes:UpdatePCSTrassenAngebotPortType_updatePCS_TrassenAngebot_Output">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes.schema_UpdatePCSTrassenAngebot" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes:schema_UpdatePCSTrassenAngebot">
+    <implementation.generic type="isschema" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes.docType_dt_ERGFPL" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes:docType_dt_ERGFPL">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes.UpdatePCSTrassenAngebotPortType_updatePCS_TrassenAngebot_Input" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes:UpdatePCSTrassenAngebotPortType_updatePCS_TrassenAngebot_Input">
+    <implementation.generic type="isdocumenttype" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes.docType_dt_ERGFPL</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes.docType_dt_BAU_INFO</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes.docType_dt_TAKT</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes.docType_ns2_VZR</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes.docType_dt_GGVE</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes.docType_ns3_VZR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes.docType_dt_GGVE" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes:docType_dt_GGVE">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes.docType_ns2_VZR" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes:docType_ns2_VZR">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes.schema_UpdatePCSTrassenAngebot_4" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes:schema_UpdatePCSTrassenAngebot_4">
+    <implementation.generic type="isschema" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes.schema_UpdatePCSTrassenAngebot_3" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes:schema_UpdatePCSTrassenAngebot_3">
+    <implementation.generic type="isschema" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes.schema_UpdatePCSTrassenAngebot_2" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes:schema_UpdatePCSTrassenAngebot_2">
+    <implementation.generic type="isschema" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes.docType_ns3_VZR" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes:docType_ns3_VZR">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes.docType_dt_TAKT" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes:docType_dt_TAKT">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes.docType_dt_BAU_INFO" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes:docType_dt_BAU_INFO">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper.callTPNAuftragProcessMultiPathOrder_1" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper:callTPNAuftragProcessMultiPathOrder_1">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.MultiPathOrder</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.mapMultiPathOrderToWSConnector</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.getWsConsumerTimeout</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors.BPM_PCS_Meldung_PortType_sendTrassenAnmeldung</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.throwException</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper.callUpdateAuftragStatus" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper:callUpdateAuftragStatus">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.getWsConsumerTimeout</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors.BPM_PCS_Meldung_PortType_sendUpdateAuftragStatus</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.checkWsFault</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper.callTPNSendStornierungVertrag" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper:callTPNSendStornierungVertrag">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.MultiPathOrder</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.mapMultiPathOrderToWSConnector</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.getWsConsumerTimeout</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors.BPM_PCS_Meldung_PortType_sendStornierungVertrag</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.checkWsFault</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper.callTPNAuftragProcessMultiPathOrder" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper:callTPNAuftragProcessMultiPathOrder">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.MultiPathOrder</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.mapMultiPathOrderToWSConnector</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.getWsConsumerTimeout</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors.BPM_PCS_Meldung_PortType_sendTrassenAnmeldung</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.throwException</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.checkWsFault</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper.callGetPathIndicatorsOfDossier" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper:callGetPathIndicatorsOfDossier">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PathIndicatorChanges</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.getWsConsumerTimeout</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierVerwaltung_.connectors.GetPathIndicatorsOfDossierPortType_getPathIndicatorsOfDossier</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.checkWsFault</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper.callTPNAuftragTrassenAbmeldung" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper:callTPNAuftragTrassenAbmeldung">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.MultiPathOrder</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.mapMultiPathOrderToWSConnector</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.getWsConsumerTimeout</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors.BPM_PCS_Meldung_PortType_sendTrassenAbmeldung</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.throwException</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.checkWsFault</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper.callTPNAblehnungOhneUeberarbeitung" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper:callTPNAblehnungOhneUeberarbeitung">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.MultiPathOrder</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.mapMultiPathOrderToWSConnector</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.logDocument</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.getWsConsumerTimeout</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors.BPM_PCS_Meldung_PortType_sendAblehnungOhneUeberarbeitung</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.checkWsFault</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper.callTPNsendAnnahmeAngebot" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper:callTPNsendAnnahmeAngebot">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.MultiPathOrder</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.mapMultiPathOrderToWSConnector</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.getWsConsumerTimeout</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors.BPM_PCS_Meldung_PortType_sendAnnahmeAngebot</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.checkWsFault</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper.callUpdateDossierProgressStatus" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper:callUpdateDossierProgressStatus">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.getWsConsumerTimeout</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung_.connectors.UpdateDossierStatusPortType_UpdateDossierProgressStatus</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus_.connectors.UpdateDossierStatusPortType_UpdateDossierProgressStatus</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.checkWsFault</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper.callTPNSendBerechtigteBeanstandung" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper:callTPNSendBerechtigteBeanstandung">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.MultiPathOrder</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.mapMultiPathOrderToWSConnector</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.getWsConsumerTimeout</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors.BPM_PCS_Meldung_PortType_sendBerechtigteBeanstandung</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.checkWsFault</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper.callUpdatePCSTrassenAngebot" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper:callUpdatePCSTrassenAngebot">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.MultiPathOrder</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.mapMultiPathOrderToWSConnector</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.getWsConsumerTimeout</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.connectors.UpdatePCSTrassenAngebotPortType_updatePCS_TrassenAngebot</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.logInfo</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.throwException</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.checkWsFault</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper.callTPNsendAblehnungOhneUeberarbeitung" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper:callTPNsendAblehnungOhneUeberarbeitung">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.MultiPathOrder</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.mapMultiPathOrderToWSConnector</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.getWsConsumerTimeout</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors.BPM_PCS_Meldung_PortType_sendAblehnungOhneUeberarbeitung</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.checkWsFault</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper.callUpdateDossierStatus" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper:callUpdateDossierStatus">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.getWsConsumerTimeout</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung_.connectors.UpdateDossierStatusPortType_UpdateDossierStatus</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus_.connectors.UpdateDossierStatusPortType_UpdateDossierStatus</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.checkWsFault</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper.callGetDossierAuftraege" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer.wrapper:callGetDossierAuftraege">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.DossierTPNAuftraegeDetails</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.getWsConsumerTimeout</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.connectors.BPM_PCS_Meldung_PortType_sendDossierAuftraege</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.checkWsFault</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer:PCS_DossierBearbeitungStatusVerwaltung">
+    <implementation.generic type="iswsdconsumer" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung_.docTypes.UpdateDossierStatusPortType_UpdateDossierProgressStatus_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung_.docTypes.UpdateDossierStatusPortType_UpdateDossierProgressStatus_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung_.docTypes.UpdateDossierStatusPortType_UpdateDossierStatus_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierBearbeitungStatusVerwaltung_.docTypes.UpdateDossierStatusPortType_UpdateDossierStatus_Output</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer:UpdatePCSTrassenAngebot">
+    <implementation.generic type="iswsdconsumer" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes.UpdatePCSTrassenAngebotPortType_updatePCS_TrassenAngebot_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.UpdatePCSTrassenAngebot_.docTypes.UpdatePCSTrassenAngebotPortType_updatePCS_TrassenAngebot_Output</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierVerwaltung" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer:PCS_DossierVerwaltung">
+    <implementation.generic type="iswsdconsumer" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierVerwaltung_.docTypes.GetPathIndicatorsOfDossierPortType_getPathIndicatorsOfDossier_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_DossierVerwaltung_.docTypes.GetPathIndicatorsOfDossierPortType_getPathIndicatorsOfDossier_Output</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer:TPN_Trassenbestellung">
+    <implementation.generic type="iswsdconsumer" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendAblehnungOhneUeberarbeitung_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendAblehnungOhneUeberarbeitung_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendAenderungNachAngebot_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendAenderungNachAngebot_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendStornierungVertrag_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendStornierungVertrag_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendAnnahmeAngebot_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendAnnahmeAngebot_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendBerechtigteBeanstandung_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendBerechtigteBeanstandung_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendUpdateAuftragStatus_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendUpdateAuftragStatus_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendStudienanmeldung_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendStudienanmeldung_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendDossierAuftraege_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendDossierAuftraege_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendAblehnungTrassenangebotMitUeberarbeitung_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendAblehnungTrassenangebotMitUeberarbeitung_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendTrassenAnmeldung_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendTrassenAnmeldung_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendTrassenAbmeldung_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.TPN_Trassenbestellung_.docTypes.BPM_PCS_Meldung_PortType_sendTrassenAbmeldung_Output</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot" displayName="DBPcsTpnBusinessServices.WsInterfaces.Consumer:PCS_Trassenangebot">
+    <implementation.generic type="iswsdconsumer" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes.UpdatePCSTrassenAngebotPortType_updatePCS_TrassenAngebot_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.WsInterfaces.Consumer.PCS_Trassenangebot_.docTypes.UpdatePCSTrassenAngebotPortType_updatePCS_TrassenAngebot_Output</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Provider.BpmPCSMeldungen" displayName="DBPcsTpnBusinessServices.WsInterfaces.Provider:BpmPCSMeldungen">
+    <implementation.generic type="iswsdprovider" />
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.processMultiPathOrder</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.withdrawMultiPathOrder</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.switchPCSPhase</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.processObservations</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.processAngebotsannahme</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.processAngebotsablehnung</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.processPathIndicatorChanges</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.processAblehnungMitUeberarbeitung</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.processStornierungVertrag</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Provider.BpmTPNMeldungen" displayName="DBPcsTpnBusinessServices.WsInterfaces.Provider:BpmTPNMeldungen">
+    <implementation.generic type="iswsdprovider" />
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.tpn2bpm.processPathOrderOffer</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.tpn2bpm.processTrassenZurueckweisung</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.tpn2bpm.processTrassenNichtKonstruierbarkeit</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.tpn2bpm.processAuftragsbundAbgeschlossen</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Provider.BPM_TPN_Meldungen" displayName="DBPcsTpnBusinessServices.WsInterfaces.Provider:BPM_TPN_Meldungen">
+    <implementation.generic type="iswsdprovider" />
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.tpn2bpm.processPathOrderOffer</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.tpn2bpm.processTrassenZurueckweisung</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.tpn2bpm.processTrassenNichtKonstruierbarkeit</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.tpn2bpm.processAuftragsbundAbgeschlossen</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Provider.BPM_PCS_ErrorHandling" displayName="DBPcsTpnBusinessServices.WsInterfaces.Provider:BPM_PCS_ErrorHandling">
+    <implementation.generic type="iswsdprovider" />
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.errorhandling.processError</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.WsInterfaces.Provider.BPM_PCS_Meldungen" displayName="DBPcsTpnBusinessServices.WsInterfaces.Provider:BPM_PCS_Meldungen">
+    <implementation.generic type="iswsdprovider" />
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.processMultiPathOrder</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.withdrawMultiPathOrder</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.switchPCSPhase</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.processObservations</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.processAngebotsannahme</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.processAngebotsablehnung</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.processPathIndicatorChanges</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.processAblehnungMitUeberarbeitung</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.processStornierungVertrag</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.callbackUpdatePCSTrassenAngebot</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.switchLeadingIM</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus_.connectors.UpdateDossierStatusPortType_UpdateDossierStatus" displayName="DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus_.connectors:UpdateDossierStatusPortType_UpdateDossierStatus">
+    <implementation.generic type="iswsconnector" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus_.docTypes.UpdateDossierStatusPortType_UpdateDossierStatus_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus_.docTypes.UpdateDossierStatusPortType_UpdateDossierStatus_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus_.connectors.UpdateDossierStatusPortType_UpdateDossierProgressStatus" displayName="DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus_.connectors:UpdateDossierStatusPortType_UpdateDossierProgressStatus">
+    <implementation.generic type="iswsconnector" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus_.docTypes.UpdateDossierStatusPortType_UpdateDossierProgressStatus_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus_.docTypes.UpdateDossierStatusPortType_UpdateDossierProgressStatus_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus_.docTypes.schema_com_dbnetz_Fahrplan_MED_UpdateDossierStatus" displayName="DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus_.docTypes:schema_com_dbnetz_Fahrplan_MED_UpdateDossierStatus">
+    <implementation.generic type="isschema" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus_.docTypes.UpdateDossierStatusPortType_UpdateDossierStatus_Input" displayName="DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus_.docTypes:UpdateDossierStatusPortType_UpdateDossierStatus_Input">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus_.docTypes.UpdateDossierStatusPortType_UpdateDossierProgressStatus_Output" displayName="DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus_.docTypes:UpdateDossierStatusPortType_UpdateDossierProgressStatus_Output">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus_.docTypes.UpdateDossierStatusPortType_UpdateDossierProgressStatus_Input" displayName="DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus_.docTypes:UpdateDossierStatusPortType_UpdateDossierProgressStatus_Input">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus_.docTypes.UpdateDossierStatusPortType_UpdateDossierStatus_Output" displayName="DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus_.docTypes:UpdateDossierStatusPortType_UpdateDossierStatus_Output">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus" displayName="DBPcsTpnBusinessServices.ws._01.consumer:com_dbnetz_Fahrplan_MED_UpdateDossierStatus">
+    <implementation.generic type="iswsdconsumer" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus_.docTypes.UpdateDossierStatusPortType_UpdateDossierProgressStatus_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus_.docTypes.UpdateDossierStatusPortType_UpdateDossierProgressStatus_Output</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus_.docTypes.UpdateDossierStatusPortType_UpdateDossierStatus_Input</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.ws._01.consumer.com_dbnetz_Fahrplan_MED_UpdateDossierStatus_.docTypes.UpdateDossierStatusPortType_UpdateDossierStatus_Output</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices._01.pub.process.tpn2bpm.processTrassenNichtKonstruierbarkeit" displayName="DBPcsTpnBusinessServices._01.pub.process.tpn2bpm:processTrassenNichtKonstruierbarkeit">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.MultiPathOrder</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.constants.getTPNKErgebnisTypes</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.common.getPathAuftragResults</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.common.createCorrelationIdForBearbeitungPathAuftrag</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices._01.pub.process.tpn2bpm.processAuftragsbundAbgeschlossen" displayName="DBPcsTpnBusinessServices._01.pub.process.tpn2bpm:processAuftragsbundAbgeschlossen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.impl.process.tpn2bpm.processAuftragsbundAbgeschlossen</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices._01.pub.process.tpn2bpm.processPathOrderOffer" displayName="DBPcsTpnBusinessServices._01.pub.process.tpn2bpm:processPathOrderOffer">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.docType_dt_ERGFPL</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.docType_dt_BAU_INFO</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.docType_dt_TAKT</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.docType_ns0_VZR</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.docType_dt_GGVE</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.docType_ns1_VZR</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.logDocument</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.constants.getVertriebskanaele</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.common.isDossierManualProcessing</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.constants.getTPNKErgebnisTypes</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.common.getPathAuftragResults</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.common.createCorrelationIdForBearbeitungPathAuftrag</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.bearbeitungPathAuftrag.isKErgebnisErgaenzungsfahrplan</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.constants.getPathAuftragProcessTypes</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices._01.pub.process.tpn2bpm.processTrassenZurueckweisung" displayName="DBPcsTpnBusinessServices._01.pub.process.tpn2bpm:processTrassenZurueckweisung">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.MultiPathOrder</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.constants.getTPNKErgebnisTypes</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.common.getPathAuftragResults</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.common.createCorrelationIdForBearbeitungPathAuftrag</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.constants.getTPNArtAnmeldungen</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.switchPCSPhase" displayName="DBPcsTpnBusinessServices._01.pub.process.pcs2bpm:switchPCSPhase">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.MultiPathOrder</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.constants.getPCSProcessPhases</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.callbackUpdatePCSTrassenAngebot" displayName="DBPcsTpnBusinessServices._01.pub.process.pcs2bpm:callbackUpdatePCSTrassenAngebot">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.processAngebotsablehnung" displayName="DBPcsTpnBusinessServices._01.pub.process.pcs2bpm:processAngebotsablehnung">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.MultiPathOrder</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.createCorrelationIdForAblehnungOhneUeberarbeitung</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.lookupProcessCorrelation</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.processPathIndicatorChanges" displayName="DBPcsTpnBusinessServices._01.pub.process.pcs2bpm:processPathIndicatorChanges">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PathIndicatorChanges</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.constants.getPCSProcessPhases</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.common.getDBAgencyId</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.logDocument</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.getPCSStatusValues</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.processObservations" displayName="DBPcsTpnBusinessServices._01.pub.process.pcs2bpm:processObservations">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.MultiPathOrder</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.logDocument</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.createCorrelationIdForObservationDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.processAblehnungMitUeberarbeitung" displayName="DBPcsTpnBusinessServices._01.pub.process.pcs2bpm:processAblehnungMitUeberarbeitung">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.MultiPathOrder</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.logDocument</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.withdrawMultiPathOrder" displayName="DBPcsTpnBusinessServices._01.pub.process.pcs2bpm:withdrawMultiPathOrder">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.docType_dt_ERGFPL</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.docType_dt_BAU_INFO</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.docType_dt_TAKT</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.docType_ns0_VZR</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.docType_dt_GGVE</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.docType_ns1_VZR</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.startPathRequestAbmeldungProcess</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.processMultiPathOrder" displayName="DBPcsTpnBusinessServices._01.pub.process.pcs2bpm:processMultiPathOrder">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.docType_dt_ERGFPL</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.docType_dt_BAU_INFO</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.docType_dt_TAKT</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.docType_ns0_VZR</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.docType_dt_GGVE</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.docType_ns1_VZR</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.logDocument</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.common.getProcessTypes</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.startNewPathRequestProcess</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.startLatePathRequestProcess</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.startAdhocPathRequestProcess</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.throwException</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.switchLeadingIM" displayName="DBPcsTpnBusinessServices._01.pub.process.pcs2bpm:switchLeadingIM">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.getProcessStateToSwitchLeaddIm</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.constants.getPCSProcessPhases</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.processAngebotsannahme" displayName="DBPcsTpnBusinessServices._01.pub.process.pcs2bpm:processAngebotsannahme">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.MultiPathOrder</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.createCorrelationIdForActiveTimetable</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.lookupProcessCorrelation</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices._01.pub.process.pcs2bpm.processStornierungVertrag" displayName="DBPcsTpnBusinessServices._01.pub.process.pcs2bpm:processStornierungVertrag">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.esb.generated.MultiPathOrder</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.logDocument</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.abmeldungProcess.createCorrelationIdForAbmeldung</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.lookupProcessCorrelation</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.deleteCurrentCorrelation</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices._01.pub.errorhandling.processError" displayName="DBPcsTpnBusinessServices._01.pub.errorhandling:processError">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorMessage</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.logDocument</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.util.test2" displayName="DBPcsTpnBusinessServices.util:test2">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.throwException</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.util.test1" displayName="DBPcsTpnBusinessServices.util:test1">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.test2</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.extractTPNErrorMessage</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.util.getWsConsumerTimeout" displayName="DBPcsTpnBusinessServices.util:getWsConsumerTimeout">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.util.checkWsFault" displayName="DBPcsTpnBusinessServices.util:checkWsFault">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.common.getIgnoreListFromTask</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.isStepInIgnoreList</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.getCallingServiceName</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.throwException</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.util.extractTPNErrorMessage" displayName="DBPcsTpnBusinessServices.util:extractTPNErrorMessage">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.extractSubstring</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.logError</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.util.setWS_ACLs" displayName="DBPcsTpnBusinessServices.util:setWS_ACLs">
+    <implementation.generic type="isjavaservice" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.code.source.DBPcsTpnBusinessServices.util.java</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.code.classes.DBPcsTpnBusinessServices.util.class</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.isStepInIgnoreList</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.util.isStepInIgnoreList" displayName="DBPcsTpnBusinessServices.util:isStepInIgnoreList">
+    <implementation.generic type="isjavaservice" />
+    <dependsOn>IS:DBPcsTpnBusinessServices.code.source.DBPcsTpnBusinessServices.util.java</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.code.classes.DBPcsTpnBusinessServices.util.class</dependsOn>
+    <dependsOn>IS:DBPcsTpnBusinessServices.util.setWS_ACLs</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.util.getProcessStateToSwitchLeaddIm" displayName="DBPcsTpnBusinessServices.util:getProcessStateToSwitchLeaddIm">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.util.extractSubstring" displayName="DBPcsTpnBusinessServices.util:extractSubstring">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.code" displayName="code">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.code.classes" displayName="code/classes">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.code.classes.DBPcsTpnBusinessServices.util.class" displayName="code/classes/DBPcsTpnBusinessServices/util.class">
+    <implementation.generic type="isfile" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.code.jars" displayName="code/jars">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.code.source" displayName="code/source">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.code.source.DBPcsTpnBusinessServices.util.java" displayName="code/source/DBPcsTpnBusinessServices/util.java">
+    <implementation.generic type="isfile" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.config" displayName="config">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.doc" displayName="doc">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.lib" displayName="lib">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.pub" displayName="pub">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.resources" displayName="resources">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.templates" displayName="templates">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="DBPcsTpnBusinessServices.web" displayName="web">
+    <implementation.generic type="isfolder" />
+  </asset>
+</asset_composite>
+
