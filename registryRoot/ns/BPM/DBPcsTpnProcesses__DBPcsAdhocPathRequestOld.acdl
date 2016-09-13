@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<asset_composite name="DBPcsTpnProcesses__DBPcsAdhocPathRequestOld" displayName="DBPcsTpnProcesses/_DBPcsAdhocPathRequestOld" runtimeVersion="8.2.2" targetNamespace="http://namespaces.softwareag.com/webMethods/BPM" xmlns="http://namespaces.softwareag.com/acdl/1.0" xmlns:EDA="http://namespaces.softwareag.com/webMethods/EDA" xmlns:MWS="http://namespaces.softwareag.com/webMethods/MWS" xmlns:IS="http://namespaces.softwareag.com/webMethods/IS" xmlns:APIPORTAL="http://namespaces.softwareag.com/webMethods/APIPORTAL" xmlns:AgileApps="http://namespaces.softwareag.com/webMethods/AgileApps" xmlns:BROKER="http://namespaces.softwareag.com/webMethods/BROKER" xmlns:implDetails="http://namespaces.softwareag.com/acdl/implDetails" xmlns:UniversalMessaging="http://namespaces.softwareag.com/webMethods/UniversalMessaging" xmlns:TN="http://namespaces.softwareag.com/webMethods/TN" xmlns:RULES="http://namespaces.softwareag.com/webMethods/RULES" xmlns:BPM="http://namespaces.softwareag.com/webMethods/BPM" xmlns:Optimize="http://namespaces.softwareag.com/webMethods/Optimize">
+    <implementation.generic type="bpmprocess"/>
+    <buildInfo name="build.timestamp" value="2016-05-17T13:50:09"/>
+    <buildInfo name="build.version" value="1"/>
+    <asset name="DBPcsTpnProcesses/_DBPcsAdhocPathRequestOld" displayName="DBPcsTpnProcesses/_DBPcsAdhocPathRequestOld" isDeployable="true">
+        <implementation.generic type="bpmprocess"/>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld.Default.subscriptionTrigger</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.AKZ_auf_rot_setzen</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Abmeldungsprozess_starten</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Abmeldungsprozess_vorbereiten</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Adhoc_Request_Offer</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Antwort_Subprocess</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Antwort_Subprocess_Path_Auftrag_</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Antwort_Subprocess_bearbeiten</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Clear_Pipeline</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Clear_Pipeline_PathIndicator_Changes</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Clear_Pipeline_Path_Indicator_Changes</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Dossier_in_Adhoc_Request_Offer_weiterschalten</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Dossier_in_Final_Offer_weiterschalten</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Dossier_in_Path_aufteilen</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Dossier_in_PhaseAdhocRequest_Offer_weiterschalten</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Dossier_in_PhaseAdhoc_Request_Offer_weiterschalten</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Dossier_in_PhaseAdhoc_Request_Offer_weiterschalten_</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Dossier_in_Phase_FinalOffer_weiterschalten</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Dossier_in_Phase_Final_Offer_weiterschalten</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Dossier_in_Phase_PathElaboration_weiterschalten</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Ergebnis_Subprocess_bearbeiten</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Error_Handling</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Initialize_Process</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Notification_an_TPN_versenden</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Notification_an_TPN_versenden_</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.PCS_Notification_Active_timetable</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.PCS_Phase_Active_Timetable_setzen</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.PCS_Phase_FinalOffer_setzen</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.PCS_Phase_PathRequest_setzen</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.PCS_Phase_Path_Elaboration_setzen</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.PCS_Phase_Postprocessing_setzen</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.POSTSUB_Path___Auftrag</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.POSTSUB_S2715</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.PRESUB_Path___Auftrag</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.PRESUB_S2715</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.PathIndicator_Changes_PostProcessing_bearbeiten</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.PathIndicator_Changes_bearbeiten</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Prozess_Abbruchmeldung__vorbereiten</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Prozess_Abbruchmeldung_senden</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.S1195</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.S1292</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.S1386</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.S2736</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.S2797</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.S2852</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.S49</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.S50</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.S96</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.S992_InputMapService</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.S992_OutputMapService</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.S992_QueueTask</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Timeout_AdhocRequestOffer_ermitteln</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Timeout_AdhocRequestOffer_ermitteln1</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Timeout_AdhocRequestOffer_ermitteln11</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Timeout_AdhocRequestOffer_ermitteln2</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Timeout_AdhocRequestOffer_ermitteln21</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Timeout_FinalOffer_ermitteln</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Timeout_FinalOffer_ermitteln1</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Timeout_FinalOffer_ermitteln11</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Timeout_FinalOffer_ermitteln2</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Timeout_FinalOffer_ermitteln21</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Trassen_anmeldung_eingegangen</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Trassenangebot_abgelehnt</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Warten_auf_Adhoc_Request_Offer</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Warten_auf_Angebot</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Warten_auf_FinalOffer</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Warten_auf_PathIndicator_Changes</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Warten_auf_PathIndicator_Changes_PostProcessing</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.Warten_auf_Path_Elaboration</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.drop_SubprocessModels</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses._DBPcsAdhocPathRequestOld._DBPcsAdhocPathRequestOld_1.Default.transitionTrigger</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.config.wmprt.DBPcsTpnProcesses._DBPcsAdhocPathRequestOld.DBPcsTpnProcesses__DBPcsAdhocPathRequestOld1.Default.xml</dependsOn>
+        <dependsOn logicalServer="Default">MWS:Task.D3137C38-DE82-010A-0978-E801FCC1D9C2</dependsOn>
+        <property name="executionEnabled" data_type="boolean" many="false" isSecure="false" displayName="Execution Enabled">
+            <value>false</value>
+        </property>
+        <property name="trackingEnabled" data_type="boolean" many="false" isSecure="false" displayName="Tracking Enabled">
+            <value>false</value>
+        </property>
+        <property name="loggingLevel" data_type="number" many="false" isSecure="false" displayName="Logging Level">
+            <value>5</value>
+        </property>
+        <property name="S2745" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Gateway22">
+            <value>false</value>
+        </property>
+        <property name="S2800" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: PathIndicator Changes PostProcessing bearbeiten">
+            <value>false</value>
+        </property>
+        <property name="S2806" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Dossier in Final Offer weiterschalten">
+            <value>false</value>
+        </property>
+        <property name="S2748" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Gateway24">
+            <value>false</value>
+        </property>
+        <property name="S137" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: PCS Phase Active Timetable setzen">
+            <value>false</value>
+        </property>
+        <property name="S1292" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Start Partial Offer für DraftTimetable">
+            <value>false</value>
+        </property>
+        <property name="S84" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Gateway4">
+            <value>false</value>
+        </property>
+        <property name="S81" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Gateway3">
+            <value>false</value>
+        </property>
+        <property name="S2742" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Gateway30">
+            <value>false</value>
+        </property>
+        <property name="S87" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Gateway6">
+            <value>false</value>
+        </property>
+        <property name="S2283" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Warten auf Path Elaboration">
+            <value>false</value>
+        </property>
+        <property name="S1152" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: PCS Phase Path Elaboration setzen">
+            <value>false</value>
+        </property>
+        <property name="S1295" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: PathIndicator Changes bearbeiten">
+            <value>false</value>
+        </property>
+        <property name="S140" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Notification an TPN versenden.">
+            <value>false</value>
+        </property>
+        <property name="S2757" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Warten auf FinalOffer">
+            <value>false</value>
+        </property>
+        <property name="S128" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Notification an TPN versenden">
+            <value>false</value>
+        </property>
+        <property name="S2815" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Dossier in Phase FinalOffer weiterschalten">
+            <value>false</value>
+        </property>
+        <property name="S93" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Dossier in Path aufteilen">
+            <value>false</value>
+        </property>
+        <property name="S92" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Terminate1">
+            <value>false</value>
+        </property>
+        <property name="S2754" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Gateway23">
+            <value>false</value>
+        </property>
+        <property name="S91" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Trassenangebot abgelehnt">
+            <value>false</value>
+        </property>
+        <property name="S96" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Dossier zurückziehen">
+            <value>false</value>
+        </property>
+        <property name="S131" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: PCS Phase PathRequest setzen">
+            <value>false</value>
+        </property>
+        <property name="S2809" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: AKZ von allen IBs sind grün?">
+            <value>false</value>
+        </property>
+        <property name="S134" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: PCS Phase Postprocessing setzen">
+            <value>false</value>
+        </property>
+        <property name="S2728" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Warten auf Angebot">
+            <value>false</value>
+        </property>
+        <property name="S3165" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Clear Pipeline Path Indicator Changes">
+            <value>false</value>
+        </property>
+        <property name="S2721" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Gateway7">
+            <value>false</value>
+        </property>
+        <property name="S1377" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Gateway13">
+            <value>false</value>
+        </property>
+        <property name="S1279" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Gateway14">
+            <value>false</value>
+        </property>
+        <property name="S1274" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Gateway20">
+            <value>false</value>
+        </property>
+        <property name="S2819" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Gateway28">
+            <value>false</value>
+        </property>
+        <property name="S2739" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Timeout FinalOffer ermitteln">
+            <value>false</value>
+        </property>
+        <property name="S3159" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Clear Pipeline PathIndicator Changes">
+            <value>false</value>
+        </property>
+        <property name="S1282" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Gateway18">
+            <value>false</value>
+        </property>
+        <property name="S2736" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: AKZ für FinalOffer auf grün setzen">
+            <value>false</value>
+        </property>
+        <property name="S1205" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Gateway15">
+            <value>false</value>
+        </property>
+        <property name="S3154" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Clear Pipeline">
+            <value>false</value>
+        </property>
+        <property name="S1202" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Gateway12">
+            <value>false</value>
+        </property>
+        <property name="S1386" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: TPN Status 'Angeboten' setzen">
+            <value>false</value>
+        </property>
+        <property name="S1380" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Dossier in Adhoc Request Offer weiterschalten">
+            <value>false</value>
+        </property>
+        <property name="S3208" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Abmeldungsprozess vorbereiten">
+            <value>false</value>
+        </property>
+        <property name="S1288" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Adhoc Request Offer">
+            <value>false</value>
+        </property>
+        <property name="S2780" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Timeout FinalOffer ermitteln2">
+            <value>false</value>
+        </property>
+        <property name="S40" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Trassen-anmeldung eingegangen">
+            <value>false</value>
+        </property>
+        <property name="S101" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Dossier in Phase PathElaboration weiterschalten">
+            <value>false</value>
+        </property>
+        <property name="S2784" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Gateway25">
+            <value>false</value>
+        </property>
+        <property name="S2789" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Gateway26">
+            <value>false</value>
+        </property>
+        <property name="S1250" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Warten auf PathIndicator Changes">
+            <value>false</value>
+        </property>
+        <property name="S1253" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Timeout AdhocRequestOffer ermitteln1">
+            <value>false</value>
+        </property>
+        <property name="S2852" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: 'Post processing' bearbeiten">
+            <value>false</value>
+        </property>
+        <property name="S3181" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Dossier in PhaseAdhoc Request Offer weiterschalten.">
+            <value>false</value>
+        </property>
+        <property name="S2710" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Gateway21">
+            <value>false</value>
+        </property>
+        <property name="S49" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Ablehnung mit Überarbeitung">
+            <value>false</value>
+        </property>
+        <property name="S1256" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Timeout AdhocRequestOffer ermitteln2">
+            <value>false</value>
+        </property>
+        <property name="S2715" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Subprozesse für Beanstandungen starten">
+            <value>false</value>
+        </property>
+        <property name="S47" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Auftragsprozess abgebrochen">
+            <value>false</value>
+        </property>
+        <property name="S46" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: DBN lead IB">
+            <value>false</value>
+        </property>
+        <property name="S43" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: DBN lead IB?">
+            <value>false</value>
+        </property>
+        <property name="S3212" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Abmeldungsprozess starten">
+            <value>false</value>
+        </property>
+        <property name="S2794" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: PCS Phase FinalOffer setzen">
+            <value>false</value>
+        </property>
+        <property name="S50" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Dossier zurückgezogen">
+            <value>false</value>
+        </property>
+        <property name="S2797" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Start Partial Offer für FinalOffer">
+            <value>false</value>
+        </property>
+        <property name="S1034" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Prozess-Abbruchmeldung  vorbereiten">
+            <value>false</value>
+        </property>
+        <property name="S56" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Subprozesse starten">
+            <value>false</value>
+        </property>
+        <property name="S58" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Antwort Subprocess Path-Auftrag ">
+            <value>false</value>
+        </property>
+        <property name="S53" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: PCS Notification Active timetable">
+            <value>false</value>
+        </property>
+        <property name="S3223" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Gateway31">
+            <value>false</value>
+        </property>
+        <property name="S2984" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: drop SubprocessModels">
+            <value>false</value>
+        </property>
+        <property name="S2763" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Timeout FinalOffer ermitteln11">
+            <value>false</value>
+        </property>
+        <property name="S61" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Warten auf Antwort von den anderen Subprozessen?">
+            <value>false</value>
+        </property>
+        <property name="S992" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Fehlerprüfung">
+            <value>false</value>
+        </property>
+        <property name="S2760" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Timeout FinalOffer ermitteln21">
+            <value>false</value>
+        </property>
+        <property name="S122" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Ergebnis Subprocess bearbeiten">
+            <value>false</value>
+        </property>
+        <property name="S2769" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Gateway27">
+            <value>false</value>
+        </property>
+        <property name="S2873" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Terminate3">
+            <value>false</value>
+        </property>
+        <property name="S113" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Path - Auftrag">
+            <value>false</value>
+        </property>
+        <property name="S1431" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Gateway19">
+            <value>false</value>
+        </property>
+        <property name="S64" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: join1">
+            <value>false</value>
+        </property>
+        <property name="S1131" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Terminate2">
+            <value>false</value>
+        </property>
+        <property name="S116" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Antwort Subprocess bearbeiten">
+            <value>false</value>
+        </property>
+        <property name="S989" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Error Handling">
+            <value>false</value>
+        </property>
+        <property name="S119" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Initialize Process">
+            <value>false</value>
+        </property>
+        <property name="S67" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Gateway1">
+            <value>false</value>
+        </property>
+        <property name="S1238" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Warten auf Adhoc Request Offer">
+            <value>false</value>
+        </property>
+        <property name="S2776" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Timeout FinalOffer ermitteln1">
+            <value>false</value>
+        </property>
+        <property name="S2773" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Warten auf PathIndicator Changes PostProcessing">
+            <value>false</value>
+        </property>
+        <property name="S1199" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Timeout AdhocRequestOffer ermitteln">
+            <value>false</value>
+        </property>
+        <property name="S70" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Gateway2">
+            <value>false</value>
+        </property>
+        <property name="S110" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: AKZ auf rot setzen">
+            <value>false</value>
+        </property>
+        <property name="S73" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: join2">
+            <value>false</value>
+        </property>
+        <property name="S1099" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Prozess-Abbruchmeldung senden">
+            <value>false</value>
+        </property>
+        <property name="S1245" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Timeout AdhocRequestOffer ermitteln21">
+            <value>false</value>
+        </property>
+        <property name="S3193" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Dossier in Phase Final Offer weiterschalten">
+            <value>false</value>
+        </property>
+        <property name="S1242" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Timeout AdhocRequestOffer ermitteln11">
+            <value>false</value>
+        </property>
+        <property name="S3190" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Dossier in PhaseAdhocRequest Offer weiterschalten">
+            <value>false</value>
+        </property>
+        <property name="S1343" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: AKZ von allen IBs sind grün">
+            <value>false</value>
+        </property>
+        <property name="S75" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Antwort Subprocess">
+            <value>false</value>
+        </property>
+        <property name="S1348" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Dossier in PhaseAdhoc Request Offer weiterschalten">
+            <value>false</value>
+        </property>
+        <property name="S996" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Terminate/Error">
+            <value>false</value>
+        </property>
+        <property name="S1441" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Gateway16">
+            <value>false</value>
+        </property>
+        <property name="S78" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: Warten auf Antwort von den anderen Subprozessen">
+            <value>false</value>
+        </property>
+        <property name="S1195" data_type="boolean" many="false" isSecure="false" displayName="Enabled for Resubmission: AKZ auf grün setzen">
+            <value>false</value>
+        </property>
+    </asset>
+</asset_composite>
