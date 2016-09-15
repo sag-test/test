@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<asset_composite xmlns:EventServer="http://namespaces.softwareag.com/webMethods/EventServer" xmlns:EDA="http://namespaces.softwareag.com/webMethods/EDA" xmlns:RULES="http://namespaces.softwareag.com/webMethods/RULES" xmlns:TN="http://namespaces.softwareag.com/webMethods/TN" xmlns:MWS="http://namespaces.softwareag.com/webMethods/MWS" xmlns:IS="http://namespaces.softwareag.com/webMethods/IS" xmlns:BROKER="http://namespaces.softwareag.com/webMethods/Broker" xmlns:BPM="http://namespaces.softwareag.com/webMethods/BPM" xmlns:Optimize="http://namespaces.softwareag.com/webMethods/Optimize" targetNamespace="http://namespaces.softwareag.com/webMethods/MWS" runtimeVersion="unknown" displayName="DBPcsTpnMwsConfig" name="DBPcsTpnMwsConfig" xmlns="http://namespaces.softwareag.com/acdl/1.0">
+    <implementation.generic type="cdp"/>
+    <buildInfo value="2016-05-17T13:49:07" name="build_timestamp"/>
+    <buildInfo value="1" name="build_version"/>
+    <buildInfo value="FFMSVA63260" name="extraction_host"/>
+    <buildInfo value="2016-05-17T01:49:16" name="extraction_timestamp"/>
+    <asset isDeployable="false" displayName="My webMethods - Sicherheitsbereiche" name="Folder.folder.system.securityrealms/My webMethods - Sicherheitsbereiche">
+        <implementation.generic type="Folder"/>
+    </asset>
+    <asset isDeployable="false" displayName="PcsTpnMasterDataToolConfiguration -- PcsTpnMasterDataToolConfiguration Inbox_1249643747" name="Realm.PcsTpnMasterDataToolConfiguration -- PcsTpnMasterDataToolConfiguration Inbox_1249643747">
+        <implementation.generic type="Realm"/>
+    </asset>
+    <asset isDeployable="false" displayName="PcsTpnMasterDataJobProcessing -- PcsTpnMasterDataJobProcessing Inbox_1119151929" name="Realm.PcsTpnMasterDataJobProcessing -- PcsTpnMasterDataJobProcessing Inbox_1119151929">
+        <implementation.generic type="Realm"/>
+    </asset>
+    <asset isDeployable="false" displayName="PcsTpnDossierManualProcessing -- PcsTpnDossierManualProcessing Inbox_1489197113" name="Realm.PcsTpnDossierManualProcessing -- PcsTpnDossierManualProcessing Inbox_1489197113">
+        <implementation.generic type="Realm"/>
+    </asset>
+    <asset isDeployable="false" displayName="PcsTpnDossierApproval -- PcsTpnDossierApproval Inbox_52651557" name="Realm.PcsTpnDossierApproval -- PcsTpnDossierApproval Inbox_52651557">
+        <implementation.generic type="Realm"/>
+    </asset>
+    <asset isDeployable="false" displayName="PcsTpnConfiguration -- PcsTpnConfiguration Inbox_2055424811" name="Realm.PcsTpnConfiguration -- PcsTpnConfiguration Inbox_2055424811">
+        <implementation.generic type="Realm"/>
+    </asset>
+    <asset isDeployable="false" displayName="Tasks -- PcsTpnMasterDataToolConfiguration_1477505092" name="Realm.Tasks -- PcsTpnMasterDataToolConfiguration_1477505092">
+        <implementation.generic type="Realm"/>
+    </asset>
+    <asset isDeployable="false" displayName="Tasks -- PcsTpnMasterDataJobProcessing_286869394" name="Realm.Tasks -- PcsTpnMasterDataJobProcessing_286869394">
+        <implementation.generic type="Realm"/>
+    </asset>
+    <asset isDeployable="false" displayName="Tasks -- PcsTpnDossierManualProcessing_1473355794" name="Realm.Tasks -- PcsTpnDossierManualProcessing_1473355794">
+        <implementation.generic type="Realm"/>
+    </asset>
+    <asset isDeployable="false" displayName="Tasks -- PcsTpnDossierApproval_367497736" name="Realm.Tasks -- PcsTpnDossierApproval_367497736">
+        <implementation.generic type="Realm"/>
+    </asset>
+    <asset isDeployable="false" displayName="My webMethods Security Realms" name="Folder.folder.system.securityrealms/My webMethods Security Realms">
+        <implementation.generic type="Folder"/>
+    </asset>
+    <asset isDeployable="false" displayName="Business -- Tasks_102979291" name="Realm.Business -- Tasks_102979291">
+        <implementation.generic type="Realm"/>
+    </asset>
+    <asset isDeployable="false" displayName="Tasks -- PcsTpnConfiguration_1842347328" name="Realm.Tasks -- PcsTpnConfiguration_1842347328">
+        <implementation.generic type="Realm"/>
+    </asset>
+    <asset isDeployable="false" displayName="Tasks -- PcsTpnErrorHandling_643040183" name="Realm.Tasks -- PcsTpnErrorHandling_643040183">
+        <implementation.generic type="Realm"/>
+    </asset>
+    <asset isDeployable="false" displayName="PcsTpnErrorHandling -- PcsTpnErrorHandling Inbox_429826393" name="Realm.PcsTpnErrorHandling -- PcsTpnErrorHandling Inbox_429826393">
+        <implementation.generic type="Realm"/>
+    </asset>
+    <asset isDeployable="false" displayName="PcsTpnMonitoring" name="Folder.folder.public/PcsTpnMonitoring">
+        <implementation.generic type="Folder"/>
+    </asset>
+    <asset isDeployable="false" displayName="Footer" name="Folder.folder.public/PcsTpnMonitoring/Footer">
+        <implementation.generic type="Folder"/>
+        <dependsOn>MWS:Portlet.dbpcstpnmonitoring___shell_footer</dependsOn>
+    </asset>
+    <asset isDeployable="false" displayName="Header" name="Folder.folder.public/PcsTpnMonitoring/Header">
+        <implementation.generic type="Folder"/>
+        <dependsOn>MWS:Portlet.dbpcstpnmonitoring___shell_header</dependsOn>
+    </asset>
+    <asset isDeployable="false" displayName="PcsTpnMonitoring" name="Folder.folder.public/PcsTpnMonitoring/PcsTpnMonitoring">
+        <implementation.generic type="Folder"/>
+        <dependsOn>MWS:Portlet.dbpcstpnmonitoring___pcstpnmonitoring</dependsOn>
+    </asset>
+    <asset isDeployable="false" displayName="PCS_TPN_FBF" name="Role.PCS_TPN_FBF">
+        <implementation.generic type="Role"/>
+    </asset>
+    <asset isDeployable="false" displayName="PCS_TPN_SHL_RULE" name="Rule.shell.PCS_TPN_SHL_RULE">
+        <implementation.generic type="Rule.shell"/>
+    </asset>
+    <asset isDeployable="false" displayName="PCS_TPN_SKIN_RULE" name="Rule.skin.PCS_TPN_SKIN_RULE">
+        <implementation.generic type="Rule.skin"/>
+        <dependsOn>MWS:Skin.PcsTpn_SKIN</dependsOn>
+    </asset>
+    <asset isDeployable="false" displayName="PCS_TPN_STARTPAGE_RULE" name="Rule.startpage.PCS_TPN_STARTPAGE_RULE">
+        <implementation.generic type="Rule.startpage"/>
+    </asset>
+    <asset isDeployable="false" displayName="PcsTpn_SHL" name="Shell.PcsTpn_SHL">
+        <implementation.generic type="Shell"/>
+    </asset>
+    <asset isDeployable="false" displayName="Smoke Test" name="User.pcstpnsmoketestuser">
+        <implementation.generic type="User"/>
+    </asset>
+    <asset isDeployable="false" displayName="PcsTpn AdminUser" name="User.pcstpnadminuser">
+        <implementation.generic type="User"/>
+    </asset>
+    <asset isDeployable="false" displayName="PCS_TPN_ADMIN" name="Role.PCS_TPN_ADMIN">
+        <implementation.generic type="Role"/>
+    </asset>
+    <asset isDeployable="false" displayName="DBPcsTpn_Werktage" name="Calendar.DBPcsTpn_Werktage">
+        <implementation.generic type="Calendar"/>
+    </asset>
+    <asset isDeployable="false" displayName="DBPcsTpn_Arbeitstage" name="Calendar.DBPcsTpn_Arbeitstage">
+        <implementation.generic type="Calendar"/>
+    </asset>
+</asset_composite>

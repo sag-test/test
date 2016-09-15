@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<asset_composite xmlns:EventServer="http://namespaces.softwareag.com/webMethods/EventServer" xmlns:EDA="http://namespaces.softwareag.com/webMethods/EDA" xmlns:RULES="http://namespaces.softwareag.com/webMethods/RULES" xmlns:TN="http://namespaces.softwareag.com/webMethods/TN" xmlns:MWS="http://namespaces.softwareag.com/webMethods/MWS" xmlns:IS="http://namespaces.softwareag.com/webMethods/IS" xmlns:BROKER="http://namespaces.softwareag.com/webMethods/Broker" xmlns:BPM="http://namespaces.softwareag.com/webMethods/BPM" xmlns:Optimize="http://namespaces.softwareag.com/webMethods/Optimize" targetNamespace="http://namespaces.softwareag.com/webMethods/BPM" runtimeVersion="8.2.2" displayName="DBPcsTpnProcesses/DBPcsStornierungVertrag" name="DBPcsTpnProcesses_DBPcsStornierungVertrag" xmlns="http://namespaces.softwareag.com/acdl/1.0">
+    <implementation.generic type="bpmprocess"/>
+    <buildInfo value="2016-05-17T13:50:09" name="build.timestamp"/>
+    <buildInfo value="1" name="build.version"/>
+    <asset isDeployable="true" displayName="DBPcsTpnProcesses/DBPcsStornierungVertrag" name="DBPcsTpnProcesses/DBPcsStornierungVertrag">
+        <implementation.generic type="bpmprocess"/>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsStornierungVertrag_1.Default.Error_Handling</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsStornierungVertrag_1.Default.Fehlerpruefung_InputMapService</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsStornierungVertrag_1.Default.Fehlerpruefung_OutputMapService</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsStornierungVertrag_1.Default.Fehlerpruefung_QueueTask</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsStornierungVertrag_1.Default.Resubmit_Process_Step</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsStornierungVertrag_1.Default.Stornierung_an_TPN_melden</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsStornierungVertrag_1.Default.Stornierung_eingegangen</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsStornierungVertrag_1.Default.transitionTrigger</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsStornierungVertrag.Default.subscriptionTrigger</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.config.wmprt.DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsTpnProcesses_DBPcsStornierungVertrag1.Default.xml</dependsOn>
+        <dependsOn logicalServer="Default">MWS:Task.D3137C38-DE82-010A-0978-E801FCC1D9C2</dependsOn>
+        <property displayName="Execution Enabled" isSecure="false" many="false" data_type="boolean" name="executionEnabled">
+            <value>false</value>
+        </property>
+        <property displayName="Tracking Enabled" isSecure="false" many="false" data_type="boolean" name="trackingEnabled">
+            <value>false</value>
+        </property>
+        <property displayName="Logging Level" isSecure="false" many="false" data_type="number" name="loggingLevel">
+            <value>5</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Stornierung an TPN melden" isSecure="false" many="false" data_type="boolean" name="S9">
+            <value>true</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Terminate2" isSecure="false" many="false" data_type="boolean" name="S32">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Stornierung eingegangen" isSecure="false" many="false" data_type="boolean" name="S7">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Resubmit Process Step" isSecure="false" many="false" data_type="boolean" name="S30">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Gateway11" isSecure="false" many="false" data_type="boolean" name="S31">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Terminate1" isSecure="false" many="false" data_type="boolean" name="S13">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Error Handling" isSecure="false" many="false" data_type="boolean" name="S28">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Fehlerpruefung" isSecure="false" many="false" data_type="boolean" name="S29">
+            <value>false</value>
+        </property>
+    </asset>
+</asset_composite>

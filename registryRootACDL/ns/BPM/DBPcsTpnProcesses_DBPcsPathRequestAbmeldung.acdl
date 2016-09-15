@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<asset_composite xmlns:EventServer="http://namespaces.softwareag.com/webMethods/EventServer" xmlns:EDA="http://namespaces.softwareag.com/webMethods/EDA" xmlns:RULES="http://namespaces.softwareag.com/webMethods/RULES" xmlns:TN="http://namespaces.softwareag.com/webMethods/TN" xmlns:MWS="http://namespaces.softwareag.com/webMethods/MWS" xmlns:IS="http://namespaces.softwareag.com/webMethods/IS" xmlns:BROKER="http://namespaces.softwareag.com/webMethods/Broker" xmlns:BPM="http://namespaces.softwareag.com/webMethods/BPM" xmlns:Optimize="http://namespaces.softwareag.com/webMethods/Optimize" targetNamespace="http://namespaces.softwareag.com/webMethods/BPM" runtimeVersion="8.2.2" displayName="DBPcsTpnProcesses/DBPcsPathRequestAbmeldung" name="DBPcsTpnProcesses_DBPcsPathRequestAbmeldung" xmlns="http://namespaces.softwareag.com/acdl/1.0">
+    <implementation.generic type="bpmprocess"/>
+    <buildInfo value="2016-05-17T13:50:09" name="build.timestamp"/>
+    <buildInfo value="1" name="build.version"/>
+    <asset isDeployable="true" displayName="DBPcsTpnProcesses/DBPcsPathRequestAbmeldung" name="DBPcsTpnProcesses/DBPcsPathRequestAbmeldung">
+        <implementation.generic type="bpmprocess"/>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Abbruch_an_PCS_quittieren</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Abmeldung_Hauptprozess_vorbereiten</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Abmeldung_an_TPN_senden</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Abmeldung_vom_Hauptprozess_eingegangen</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Abmeldung_von_PCS_eingegangen</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Abzumeldenden_Prozess_abbrechen</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Abzumeldenden_Prozess_wurde_abgebrochen</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Error_Handling</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Fehlerpruefung_InputMapService</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Fehlerpruefung_OutputMapService</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Fehlerpruefung_QueueTask</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Handle_Timeout</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Resubmit_Process_Step</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Subprozesse_Path_Auftrag_beenden</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.transitionTrigger</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.Default.subscriptionTrigger</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.config.wmprt.DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsTpnProcesses_DBPcsPathRequestAbmeldung1.Default.xml</dependsOn>
+        <dependsOn logicalServer="Default">MWS:Task.D3137C38-DE82-010A-0978-E801FCC1D9C2</dependsOn>
+        <property displayName="Execution Enabled" isSecure="false" many="false" data_type="boolean" name="executionEnabled">
+            <value>false</value>
+        </property>
+        <property displayName="Tracking Enabled" isSecure="false" many="false" data_type="boolean" name="trackingEnabled">
+            <value>false</value>
+        </property>
+        <property displayName="Logging Level" isSecure="false" many="false" data_type="number" name="loggingLevel">
+            <value>5</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Abbruch Path - Auftrag" isSecure="false" many="false" data_type="boolean" name="S27">
+            <value>true</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Subprozesse Path-Auftrag beenden" isSecure="false" many="false" data_type="boolean" name="S1319">
+            <value>true</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Gateway1" isSecure="false" many="false" data_type="boolean" name="S1198">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Gateway3" isSecure="false" many="false" data_type="boolean" name="S51">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Abmeldung von PCS eingegangen" isSecure="false" many="false" data_type="boolean" name="S14">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: End" isSecure="false" many="false" data_type="boolean" name="S32">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Abbruch an PCS quittieren" isSecure="false" many="false" data_type="boolean" name="S30">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Abzumeldenden Prozess wurde abgebrochen" isSecure="false" many="false" data_type="boolean" name="S22">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: End Event1" isSecure="false" many="false" data_type="boolean" name="S1359">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Gateway2" isSecure="false" many="false" data_type="boolean" name="S1201">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Abzumeldenden Prozess abbrechen" isSecure="false" many="false" data_type="boolean" name="S17">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Abmeldung vom Hauptprozess eingegangen" isSecure="false" many="false" data_type="boolean" name="S38">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Resubmit Process Step" isSecure="false" many="false" data_type="boolean" name="S1331">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Handle Timeout" isSecure="false" many="false" data_type="boolean" name="S1265">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Gateway11" isSecure="false" many="false" data_type="boolean" name="S1330">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Terminate2" isSecure="false" many="false" data_type="boolean" name="S1332">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Fehlerpruefung" isSecure="false" many="false" data_type="boolean" name="S1329">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Abmeldung Hauptprozess vorbereiten" isSecure="false" many="false" data_type="boolean" name="S996">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Error Handling" isSecure="false" many="false" data_type="boolean" name="S1328">
+            <value>false</value>
+        </property>
+    </asset>
+</asset_composite>

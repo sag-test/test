@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<asset_composite xmlns:EventServer="http://namespaces.softwareag.com/webMethods/EventServer" xmlns:EDA="http://namespaces.softwareag.com/webMethods/EDA" xmlns:RULES="http://namespaces.softwareag.com/webMethods/RULES" xmlns:TN="http://namespaces.softwareag.com/webMethods/TN" xmlns:MWS="http://namespaces.softwareag.com/webMethods/MWS" xmlns:IS="http://namespaces.softwareag.com/webMethods/IS" xmlns:BROKER="http://namespaces.softwareag.com/webMethods/Broker" xmlns:BPM="http://namespaces.softwareag.com/webMethods/BPM" xmlns:Optimize="http://namespaces.softwareag.com/webMethods/Optimize" targetNamespace="http://namespaces.softwareag.com/webMethods/MWS" runtimeVersion="unknown" displayName="DBPcsTpnLogin" name="DBPcsTpnLogin" xmlns="http://namespaces.softwareag.com/acdl/1.0">
+    <implementation.generic type="war"/>
+    <buildInfo value="2016-05-17T13:49:07" name="build_timestamp"/>
+    <buildInfo value="1" name="build_version"/>
+    <buildInfo value="FFMSVA63260" name="extraction_host"/>
+    <buildInfo value="2016-05-17T01:49:13" name="extraction_timestamp"/>
+    <asset isDeployable="false" displayName="DBPcsTpnLogin" name="CAFApp.DBPcsTpnLogin">
+        <implementation.generic type="CAFApp"/>
+    </asset>
+    <asset isDeployable="false" displayName="Login_ptl" name="Portlet.dbpcstpnlogin___login_ptl">
+        <implementation.generic type="Portlet"/>
+    </asset>
+</asset_composite>

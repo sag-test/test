@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<asset_composite xmlns:EventServer="http://namespaces.softwareag.com/webMethods/EventServer" xmlns:EDA="http://namespaces.softwareag.com/webMethods/EDA" xmlns:RULES="http://namespaces.softwareag.com/webMethods/RULES" xmlns:TN="http://namespaces.softwareag.com/webMethods/TN" xmlns:MWS="http://namespaces.softwareag.com/webMethods/MWS" xmlns:IS="http://namespaces.softwareag.com/webMethods/IS" xmlns:BROKER="http://namespaces.softwareag.com/webMethods/Broker" xmlns:BPM="http://namespaces.softwareag.com/webMethods/BPM" xmlns:Optimize="http://namespaces.softwareag.com/webMethods/Optimize" targetNamespace="http://namespaces.softwareag.com/webMethods/BPM" runtimeVersion="8.2.2" displayName="DBPcsTpnProcesses/DBPcs_VertriebskanalTPN" name="DBPcsTpnProcesses_DBPcs_VertriebskanalTPN" xmlns="http://namespaces.softwareag.com/acdl/1.0">
+    <implementation.generic type="bpmprocess"/>
+    <buildInfo value="2016-05-17T13:50:09" name="build.timestamp"/>
+    <buildInfo value="1" name="build.version"/>
+    <asset isDeployable="true" displayName="DBPcsTpnProcesses/DBPcs_VertriebskanalTPN" name="DBPcsTpnProcesses/DBPcs_VertriebskanalTPN">
+        <implementation.generic type="bpmprocess"/>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default.Anforderung_empfangen</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default.Error_Handling</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default.Fehlerpruefung_InputMapService</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default.Fehlerpruefung_OutputMapService</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default.Fehlerpruefung_QueueTask</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default.Initialize_Process</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default.Resubmit_Process_Step</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default.Update_PCS</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default.Update_TPN</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default.Update_TPN_AuftragStatus</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default.transitionTrigger</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.Default.subscriptionTrigger</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.config.wmprt.DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcsTpnProcesses_DBPcs_VertriebskanalTPN1.Default.xml</dependsOn>
+        <dependsOn logicalServer="Default">MWS:Task.D3137C38-DE82-010A-0978-E801FCC1D9C2</dependsOn>
+        <property displayName="Execution Enabled" isSecure="false" many="false" data_type="boolean" name="executionEnabled">
+            <value>false</value>
+        </property>
+        <property displayName="Tracking Enabled" isSecure="false" many="false" data_type="boolean" name="trackingEnabled">
+            <value>false</value>
+        </property>
+        <property displayName="Logging Level" isSecure="false" many="false" data_type="number" name="loggingLevel">
+            <value>5</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Update PCS" isSecure="false" many="false" data_type="boolean" name="S63">
+            <value>true</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Update TPN" isSecure="false" many="false" data_type="boolean" name="S66">
+            <value>true</value>
+        </property>
+        <property displayName="Enabled for Resubmission: End of Process" isSecure="false" many="false" data_type="boolean" name="S26">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Initialize Process" isSecure="false" many="false" data_type="boolean" name="S122">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Gateway12" isSecure="false" many="false" data_type="boolean" name="S1365">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Update TPN AuftragStatus" isSecure="false" many="false" data_type="boolean" name="S1368">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Error Handling" isSecure="false" many="false" data_type="boolean" name="S169">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Anforderung empfangen" isSecure="false" many="false" data_type="boolean" name="S7">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Gateway13" isSecure="false" many="false" data_type="boolean" name="S1371">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Resubmit Process Step" isSecure="false" many="false" data_type="boolean" name="S172">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Gateway11" isSecure="false" many="false" data_type="boolean" name="S171">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: TerminateError" isSecure="false" many="false" data_type="boolean" name="S173">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Fehlerpruefung" isSecure="false" many="false" data_type="boolean" name="S170">
+            <value>false</value>
+        </property>
+    </asset>
+</asset_composite>

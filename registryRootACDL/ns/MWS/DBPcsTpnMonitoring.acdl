@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<asset_composite xmlns:EventServer="http://namespaces.softwareag.com/webMethods/EventServer" xmlns:EDA="http://namespaces.softwareag.com/webMethods/EDA" xmlns:RULES="http://namespaces.softwareag.com/webMethods/RULES" xmlns:TN="http://namespaces.softwareag.com/webMethods/TN" xmlns:MWS="http://namespaces.softwareag.com/webMethods/MWS" xmlns:IS="http://namespaces.softwareag.com/webMethods/IS" xmlns:BROKER="http://namespaces.softwareag.com/webMethods/Broker" xmlns:BPM="http://namespaces.softwareag.com/webMethods/BPM" xmlns:Optimize="http://namespaces.softwareag.com/webMethods/Optimize" targetNamespace="http://namespaces.softwareag.com/webMethods/MWS" runtimeVersion="unknown" displayName="DBPcsTpnMonitoring" name="DBPcsTpnMonitoring" xmlns="http://namespaces.softwareag.com/acdl/1.0">
+    <implementation.generic type="war"/>
+    <buildInfo value="2016-05-17T13:49:07" name="build_timestamp"/>
+    <buildInfo value="1" name="build_version"/>
+    <buildInfo value="FFMSVA63260" name="extraction_host"/>
+    <buildInfo value="2016-05-17T01:49:14" name="extraction_timestamp"/>
+    <asset isDeployable="false" displayName="DBPcsTpnMonitoring" name="CAFApp.DBPcsTpnMonitoring">
+        <implementation.generic type="CAFApp"/>
+        <dependsOn>IS:dbPcsTpnUI.ws.provider.PcsTpnUiProvider</dependsOn>
+        <property displayName="env-entry:wsclient-socketTimeout" isSecure="false" many="false" name="env-entry:wsclient-socketTimeout">
+            <value>120000</value>
+        </property>
+        <property displayName="env-entry:wsclient-endpointAddress" isSecure="false" many="false" name="env-entry:wsclient-endpointAddress">
+            <value></value>
+        </property>
+        <property displayName="env-entry:wsclient-requiresAuth" isSecure="false" many="false" name="env-entry:wsclient-requiresAuth">
+            <value>true</value>
+        </property>
+        <property displayName="env-entry:wsclient-authMethod" isSecure="false" many="false" name="env-entry:wsclient-authMethod">
+            <value>1</value>
+        </property>
+        <property displayName="env-entry:wsclient-username" isSecure="false" many="false" name="env-entry:wsclient-username">
+            <value>SoaAdmin_PCS</value>
+        </property>
+        <property displayName="env-entry:wsclient-password" isSecure="true" many="false" name="env-entry:wsclient-password">
+            <value>{DES}0LgBzdO8uZqRnNkSwmR86A==</value>
+        </property>
+    </asset>
+    <asset isDeployable="false" displayName="PcsTpnMonitoring" name="Portlet.dbpcstpnmonitoring___pcstpnmonitoring">
+        <implementation.generic type="Portlet"/>
+    </asset>
+    <asset isDeployable="false" displayName="Shell_Header" name="Portlet.dbpcstpnmonitoring___shell_header">
+        <implementation.generic type="Portlet"/>
+    </asset>
+    <asset isDeployable="false" displayName="Shell_Footer" name="Portlet.dbpcstpnmonitoring___shell_footer">
+        <implementation.generic type="Portlet"/>
+    </asset>
+    <asset isDeployable="false" displayName="PcsTpnMonitoring" name="Folder.folder.public/PcsTpnMonitoring">
+        <implementation.generic type="Folder"/>
+    </asset>
+    <asset isDeployable="false" displayName="Footer" name="Folder.folder.public/PcsTpnMonitoring/Footer">
+        <implementation.generic type="Folder"/>
+        <dependsOn>MWS:Portlet.dbpcstpnmonitoring___shell_footer</dependsOn>
+    </asset>
+    <asset isDeployable="false" displayName="Header" name="Folder.folder.public/PcsTpnMonitoring/Header">
+        <implementation.generic type="Folder"/>
+        <dependsOn>MWS:Portlet.dbpcstpnmonitoring___shell_header</dependsOn>
+    </asset>
+    <asset isDeployable="false" displayName="PcsTpnMonitoring" name="Folder.folder.public/PcsTpnMonitoring/PcsTpnMonitoring">
+        <implementation.generic type="Folder"/>
+        <dependsOn>MWS:Portlet.dbpcstpnmonitoring___pcstpnmonitoring</dependsOn>
+    </asset>
+</asset_composite>

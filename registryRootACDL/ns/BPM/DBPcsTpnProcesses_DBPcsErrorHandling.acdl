@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<asset_composite xmlns:EventServer="http://namespaces.softwareag.com/webMethods/EventServer" xmlns:EDA="http://namespaces.softwareag.com/webMethods/EDA" xmlns:RULES="http://namespaces.softwareag.com/webMethods/RULES" xmlns:TN="http://namespaces.softwareag.com/webMethods/TN" xmlns:MWS="http://namespaces.softwareag.com/webMethods/MWS" xmlns:IS="http://namespaces.softwareag.com/webMethods/IS" xmlns:BROKER="http://namespaces.softwareag.com/webMethods/Broker" xmlns:BPM="http://namespaces.softwareag.com/webMethods/BPM" xmlns:Optimize="http://namespaces.softwareag.com/webMethods/Optimize" targetNamespace="http://namespaces.softwareag.com/webMethods/BPM" runtimeVersion="8.2.2" displayName="DBPcsTpnProcesses/DBPcsErrorHandling" name="DBPcsTpnProcesses_DBPcsErrorHandling" xmlns="http://namespaces.softwareag.com/acdl/1.0">
+    <implementation.generic type="bpmprocess"/>
+    <buildInfo value="2016-05-17T13:50:08" name="build.timestamp"/>
+    <buildInfo value="1" name="build.version"/>
+    <asset isDeployable="true" displayName="DBPcsTpnProcesses/DBPcsErrorHandling" name="DBPcsTpnProcesses/DBPcsErrorHandling">
+        <implementation.generic type="bpmprocess"/>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default.AKZ_auf_rot_setzen</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default.Ergebnis_Fehlerhandling_bearbeiten</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default.Fehler_aufgetreten</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default.Fehlerbehandlung_InputMapService</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default.Fehlerbehandlung_OutputMapService</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default.Fehlerbehandlung_QueueTask</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default.Initialize_Process</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default.S40</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default.S45</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default.transitionTrigger</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.DBPcsErrorHandling.Default.subscriptionTrigger</dependsOn>
+        <dependsOn logicalServer="Default">IS:DBPcsTpnProcesses.config.wmprt.DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsTpnProcesses_DBPcsErrorHandling1.Default.xml</dependsOn>
+        <dependsOn logicalServer="Default">MWS:Task.D3137C38-DE82-010A-0978-E801FCC1D9C2</dependsOn>
+        <property displayName="Execution Enabled" isSecure="false" many="false" data_type="boolean" name="executionEnabled">
+            <value>false</value>
+        </property>
+        <property displayName="Tracking Enabled" isSecure="false" many="false" data_type="boolean" name="trackingEnabled">
+            <value>false</value>
+        </property>
+        <property displayName="Logging Level" isSecure="false" many="false" data_type="number" name="loggingLevel">
+            <value>5</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Initialize Process" isSecure="false" many="false" data_type="boolean" name="S8">
+            <value>true</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Fehlerbehandlung" isSecure="false" many="false" data_type="boolean" name="S9">
+            <value>true</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Ergebnis Fehlerhandling bearbeiten" isSecure="false" many="false" data_type="boolean" name="S16">
+            <value>true</value>
+        </property>
+        <property displayName="Enabled for Resubmission: AKZ auf rot setzen" isSecure="false" many="false" data_type="boolean" name="S20">
+            <value>true</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Dossier zurückweisen" isSecure="false" many="false" data_type="boolean" name="S40">
+            <value>true</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Fehlermeldung überprüfen" isSecure="false" many="false" data_type="boolean" name="S45">
+            <value>true</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Fehler aufgetreten" isSecure="false" many="false" data_type="boolean" name="S14">
+            <value>true</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Gateway5" isSecure="false" many="false" data_type="boolean" name="S35">
+            <value>true</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Gateway6" isSecure="false" many="false" data_type="boolean" name="S36">
+            <value>true</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Gateway3" isSecure="false" many="false" data_type="boolean" name="S26">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Terminate1" isSecure="false" many="false" data_type="boolean" name="S12">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Gateway2" isSecure="false" many="false" data_type="boolean" name="S22">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Gateway1" isSecure="false" many="false" data_type="boolean" name="S18">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Gateway4" isSecure="false" many="false" data_type="boolean" name="S29">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Gateway8" isSecure="false" many="false" data_type="boolean" name="S49">
+            <value>false</value>
+        </property>
+        <property displayName="Enabled for Resubmission: Gateway7" isSecure="false" many="false" data_type="boolean" name="S48">
+            <value>false</value>
+        </property>
+    </asset>
+</asset_composite>
