@@ -9,7 +9,7 @@
     </asset>
     <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Trassen_anmeldung_eingegangen" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Trassen_anmeldung_eingegangen" isDeployable="true">
         <implementation.generic type="isflowservice"/>
-        <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsNewPathRequestProcessDoc</dependsOn>
+        <dependsOn>TEST</dependsOn>
     </asset>
     <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Frist_ignorieren" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Frist_ignorieren" isDeployable="true">
         <implementation.generic type="isflowservice"/>
