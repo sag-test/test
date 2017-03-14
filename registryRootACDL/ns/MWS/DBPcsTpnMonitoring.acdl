@@ -12,7 +12,7 @@
             <value>120000</value>
         </property>
         <property displayName="env-entry:wsclient-endpointAddress" isSecure="false" many="false" name="env-entry:wsclient-endpointAddress">
-            <value></value>
+            <value>1</value>
         </property>
         <property displayName="env-entry:wsclient-requiresAuth" isSecure="false" many="false" name="env-entry:wsclient-requiresAuth">
             <value>true</value>
