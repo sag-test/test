@@ -4,7 +4,7 @@
   <buildInfo name="BuildVersion" value="1" />
   <buildInfo name="BuildTimestamp" value="2016-05-17T13:49:57" />
   <property name="activatePkgOnInstall" displayName="Activate Package On Install">
-    <value>true</value>
+    <value>false</value>
   </property>
   <property name="archivePkgOnInstall" displayName="Archive Package On Install">
     <value>false</value>
