@@ -7,7 +7,7 @@
     <value>true</value>
   </property>
   <property name="archivePkgOnInstall" displayName="Archive Package On Install">
-    <value>false</value>
+    <value>true</value>
   </property>
   <property name="compilePackage" displayName="Compile Package On Install">
     <value>true</value>
