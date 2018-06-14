@@ -10,7 +10,7 @@
     <value>true</value>
   </property>
   <property name="compilePackage" displayName="Compile Package On Install">
-    <value>true</value>
+    <value>false</value>
   </property>
   <property name="fragPackage" displayName="Fragment Package On Install">
     <value>true</value>
