@@ -1,0 +1,2020 @@
+<asset_composite xmlns="http://namespaces.softwareag.com/acdl/1.0" targetNamespace="http://namespaces.softwareag.com/webMethods/IS" name="DBPcsTpnProcesses" runtimeVersion="8.2.2.0">
+  <implementation.generic type="ispackage" />
+  <buildInfo name="MinimumTargetRuntimeVersion" value="8.2.2.0" />
+  <buildInfo name="BuildVersion" value="1" />
+  <buildInfo name="BuildTimestamp" value="2016-05-17T13:49:54" />
+  <property name="activatePkgOnInstall" displayName="Activate Package On Install">
+    <value>true</value>
+  </property>
+  <property name="archivePkgOnInstall" displayName="Archive Package On Install">
+    <value>true</value>
+  </property>
+  <property name="compilePackage" displayName="Compile Package On Install">
+    <value>true</value>
+  </property>
+  <property name="fragPackage" displayName="Fragment Package On Install">
+    <value>true</value>
+  </property>
+  <property name="clearACLs" displayName="Delete ACLs for the assets from the target Integration Server">
+    <value>false</value>
+  </property>
+  <property name="disallowActivePackageInstall" displayName="disallowActivePackageInstall">
+    <value>false</value>
+  </property>
+  <property name="packageExecutionCheck" displayName="packageExecutionCheck">
+    <value>0</value>
+  </property>
+  <property name="suspendTriggersDuringDeploy" displayName="Suspend Triggers During Deployment">
+    <value>false</value>
+  </property>
+  <property name="syncDocTypesToBroker" displayName="Synchronize Document Types To Broker During Deployment">
+    <value>true</value>
+  </property>
+  <asset name="ISPackage.DBPcsTpnProcesses" displayName="DBPcsTpnProcesses">
+    <implementation.generic type="ispackage" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Trassen_anmeldung_eingegangen" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Trassen_anmeldung_eingegangen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsNewPathRequestProcessDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Frist_ignorieren" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Frist_ignorieren">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Prozess_Abbruchmeldung__vorbereiten" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Prozess_Abbruchmeldung__vorbereiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsDossierWithdrawDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsDossierWithdrawResponseDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.prepareMainProcessCancelationResponse</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Warten_auf_Observations" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Warten_auf_Observations">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsObservationsDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.NEF_Meldung" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:NEF_Meldung">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsNEFMainProcessDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Fehlerbehandlung_QueueTask" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Fehlerbehandlung_QueueTask">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Fehlerbehandlung_InputMapService" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Fehlerbehandlung_InputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Fehlerbehandlung_QueueTask</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Status_Post_processing_setzen" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Status_Post_processing_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.setProcessPhasePostProcessing</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.PCS_Phase_Draft_Timetable_setzen" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:PCS_Phase_Draft_Timetable_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.setProcessPhaseDraftTimetable</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Timeout_DraftTimetable_ermitteln21" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Timeout_DraftTimetable_ermitteln21">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutDraftTimetableNPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Timeout_DraftTimetable_ermitteln11" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Timeout_DraftTimetable_ermitteln11">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutDraftTimetableNPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.PCS_Phase_Path_Elaboration_setzen" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:PCS_Phase_Path_Elaboration_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.setProcessPhasePathElaboration</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Clear_Pipeline_PathIndicators_Changes" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Clear_Pipeline_PathIndicators_Changes">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropPcsPathIndicatorChangesDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Clear_Pipeline_PathIndicator_Changes_PaP" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Clear_Pipeline_PathIndicator_Changes_PaP">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropPcsPathIndicatorChangesPaPDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.S104" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:S104">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSProgressStatusAccepted</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Dossier_in_Phase_Draft_Timetable_weiterschalten" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Dossier_in_Phase_Draft_Timetable_weiterschalten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSPhaseDraftTimetable</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Antwort_Subprocess_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Antwort_Subprocess_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragAutoResponseDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.handleTpnAuftragAutoResponse</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Ergebnis_Subprocess_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Ergebnis_Subprocess_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragResultDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.handleTpnAuftragResult</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Timeout_FinalOffer_ermitteln2" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Timeout_FinalOffer_ermitteln2">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutFinalOfferNPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Timeout_FinalOffer_ermitteln1" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Timeout_FinalOffer_ermitteln1">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutFinalOfferNPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Notification_an_TPN_versenden" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Notification_an_TPN_versenden">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.sendAnnahmeAngebot</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Warten_auf_FinalOffer" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Warten_auf_FinalOffer">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPhaseNotificationDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.POSTSUB_Path___Auftrag" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:POSTSUB_Path___Auftrag">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Abmeldungsprozess_vorbereiten" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Abmeldungsprozess_vorbereiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsAbmeldungProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.prepareAbmeldungProcess</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Compute_is_DB_lead_IM" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Compute_is_DB_lead_IM">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPhaseNotificationDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.common.updateIsDBLeadIM</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Warten_auf_PathIndicator_Changes" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Warten_auf_PathIndicator_Changes">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathIndicatorChangesDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.S3149" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:S3149">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePcsPhaseHarmonizationZurueckgewiesen</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.POSTSUB_S1760" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:POSTSUB_S1760">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.ErrHandling_AKZ_auf_rot_setzen" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:ErrHandling_AKZ_auf_rot_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSProgressStatusNotAccepted</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.PathIndicator_Changes_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:PathIndicator_Changes_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathIndicatorChangesDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.handlePathIndicatorChanges</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Timeout_DraftTimetable_ermitteln2" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Timeout_DraftTimetable_ermitteln2">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutDraftTimetableNPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Timeout_DraftTimetable_ermitteln1" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Timeout_DraftTimetable_ermitteln1">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutDraftTimetableNPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Ergebnis_Subprocess__VNP_" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Ergebnis_Subprocess__VNP_">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragResultDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Initialize_Process" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Initialize_Process">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsNewPathRequestProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.DossierApprovalTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.initializeNewPathRequestProcess</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Warten_auf_Post_processing" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Warten_auf_Post_processing">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPhaseNotificationDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.PCS_Phase_Path_Elaboration_setzen_PaP" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:PCS_Phase_Path_Elaboration_setzen_PaP">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.setProcessPhasePathElaboration</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Dossier_in_Path_aufteilen" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Dossier_in_Path_aufteilen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.splitDossierInPaths</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.AKZ_auf_rot_setzen" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:AKZ_auf_rot_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSProgressStatusNotAccepted</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Resubmit_Process_Step" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Resubmit_Process_Step">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.resubmitProcessStep</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Clear_Pipeline_PCS_Response" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Clear_Pipeline_PCS_Response">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.bearbeitungPathAuftrag.pipelineMgmt.dropPCSTrassenAngebotResponseDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Fehlerbehandlung_OutputMapService" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Fehlerbehandlung_OutputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.S1532" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:S1532">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSPhasePartialOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.TPN_Status_VNP_Angeboten_setzen" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:TPN_Status_VNP_Angeboten_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updateTPNAuftragDraftTimetableStatus</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Clear_Pipeline" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Clear_Pipeline">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropPcsPathAuftragResultDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Dossier_in_Draft_Timetable_weiterschalten" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Dossier_in_Draft_Timetable_weiterschalten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSPhaseDraftTimetable</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.S143_InputMapService" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:S143_InputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.S143_QueueTask</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.ErrHandling_Abmeldungsprozess_vorbereiten" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:ErrHandling_Abmeldungsprozess_vorbereiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsAbmeldungProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.prepareAbmeldungProcess</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.PCS_Response_verarbeiten" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:PCS_Response_verarbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PCSTrassenAngebotResponseDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.handlePCSTrassenAngebotResponse</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.S143_QueueTask" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:S143_QueueTask">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Timeout_FinalOffer_ermitteln21" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Timeout_FinalOffer_ermitteln21">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutFinalOfferNPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.S3313_OutputMapService" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:S3313_OutputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.DossierApprovalTaskDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Timeout_FinalOffer_ermitteln11" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Timeout_FinalOffer_ermitteln11">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutFinalOfferNPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.PCS_Erfolgsmeldung_an_TPN_senden" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:PCS_Erfolgsmeldung_an_TPN_senden">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updateTPNAuftragStatus</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.S3089" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:S3089">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.checkDossierErrorType</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Ergebnis_ENP_oder_Angebot" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Ergebnis_ENP_oder_Angebot">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragResultDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Warten_auf_PathIndicator_Changes_PaP" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Warten_auf_PathIndicator_Changes_PaP">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathIndicatorChangesPaPDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.S3313_QueueTask" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:S3313_QueueTask">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.POSTSUB_NEF_Subprocess_starten" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:POSTSUB_NEF_Subprocess_starten">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Frist_x_75_berechnen" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Frist_x_75_berechnen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutPaPReservedFinal</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Timeout_DraftTimetable_ermitteln" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Timeout_DraftTimetable_ermitteln">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutDraftTimetableNPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.ErrHandling_Ergebnis_Fehlerhandling_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:ErrHandling_Ergebnis_Fehlerhandling_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.handleErrorHandlingTaskResult</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.PathIndicator_Changes_PostProcessing_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:PathIndicator_Changes_PostProcessing_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathIndicatorChangesDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.handlePathIndicatorChanges</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Dossier_in_Final_Offer_weiterschalten" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Dossier_in_Final_Offer_weiterschalten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSPhaseFinalOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.S98" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:S98">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePcsPhaseHarmonizationZurueckgewiesen</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.S3318" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:S3318">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.DossierApprovalTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.handleDossierApprovalResult</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.S48" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:S48">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsDossierWithdrawDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Clear_SubprocessModels" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Clear_SubprocessModels">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropSubprocessModels</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Warten_auf_Path_Elaboration" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Warten_auf_Path_Elaboration">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPhaseNotificationDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.S1453" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:S1453">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSProgressStatusAccepted</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.S2522" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:S2522">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.initiatePCSPartialOfferForFinalOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.S3313_InputMapService" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:S3313_InputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.DossierApprovalTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.S3313_QueueTask</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.PathIndicator_Changes_PaP_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:PathIndicator_Changes_PaP_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathIndicatorChangesPaPDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.handlePathIndicatorChangesPaP</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Compute_Lead_IM" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Compute_Lead_IM">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.common.updateIsDBLeadIM</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Dossier_in_Phase_PathElaboration_weiterschalten" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Dossier_in_Phase_PathElaboration_weiterschalten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSPhasePathElaboration</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Trassenangebot_abgelehnt" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Trassenangebot_abgelehnt">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsRejectOfferDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Clear_Pipeline_AutoResponse" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Clear_Pipeline_AutoResponse">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropPcsPathAuftragAutoResponseDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.PCS_Notification___ActiveTimetable" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:PCS_Notification___ActiveTimetable">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPhaseNotificationDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Ergebnis_Subprocess_AutoResponse_" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Ergebnis_Subprocess_AutoResponse_">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragAutoResponseDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.ENP_an_PCS_senden" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:ENP_an_PCS_senden">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSTrassenAngebot</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.ENP_oder_Angebot_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:ENP_oder_Angebot_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragResultDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.handleTpnAuftragFinalOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Erfolgsmeldung_an_TPN_senden" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Erfolgsmeldung_an_TPN_senden">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updateTPNAuftragStatus</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Warten_auf_PathIndicator_Changes_PostProcessing" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Warten_auf_PathIndicator_Changes_PostProcessing">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathIndicatorChangesDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Dossier_in_Phase_Final_Offer_weiterschalten" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Dossier_in_Phase_Final_Offer_weiterschalten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSPhaseFinalOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Notification_an_TPN_versenden_" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Notification_an_TPN_versenden_">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.sendAblehnungOhneUeberarbeitung</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Ergebnis_Fehlerhandling_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Ergebnis_Fehlerhandling_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.handleErrorHandlingTaskResult</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Warten_auf_PCS_Response" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Warten_auf_PCS_Response">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PCSTrassenAngebotResponseDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.PRESUB_NEF_Subprocess_starten" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:PRESUB_NEF_Subprocess_starten">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.PCS_Response_Timeout_verarbeiten" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:PCS_Response_Timeout_verarbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.handlePCSTrassenAngebotResponseTimeout</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Clear_pipeline_NEF_Meldung" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Clear_pipeline_NEF_Meldung">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropPcsNEFMainProcessDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.PCS_Phase_ActiveTimetablesetzen" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:PCS_Phase_ActiveTimetablesetzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.setProcessPhaseActiveTimeTable</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Timeout_FinalOffer_ermitteln" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Timeout_FinalOffer_ermitteln">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutFinalOfferNPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.PaP_Frist_x_75_ueberpruefen_End" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:PaP_Frist_x_75_ueberpruefen_End">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Clear_Pipeline_PathIndicator_Changes" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Clear_Pipeline_PathIndicator_Changes">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropPcsPathIndicatorChangesDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.PaP_Frist_x_75_ueberpruefen_Start" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:PaP_Frist_x_75_ueberpruefen_Start">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.S143_OutputMapService" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:S143_OutputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Post_processing_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Post_processing_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsObservationsDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.handlePostProcessing</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.NEF_Meldung_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:NEF_Meldung_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsNEFMainProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.processNewNEFMessage</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Clear_pipeline_Subprocess_models" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Clear_pipeline_Subprocess_models">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropSubprocessModels</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.PRESUB_S1760" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:PRESUB_S1760">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Warten_auf_DraftTimetable" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Warten_auf_DraftTimetable">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPhaseNotificationDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Dossier_in_FinalOffer_weiterschalten_partially_harmonized" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Dossier_in_FinalOffer_weiterschalten_partially_harmonized">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSPhaseFinalOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Compute_is_DM_lead_IM" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Compute_is_DM_lead_IM">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPhaseNotificationDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.common.updateIsDBLeadIM</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.PCS_Phase_PathRequest_setzen" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:PCS_Phase_PathRequest_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.setProcessPhasePathRequest</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.PCS_Phase_FinalOffer_setzen" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:PCS_Phase_FinalOffer_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.setProcessPhaseFinalOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.TPN_Status_ENP_Angeboten_setzen" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:TPN_Status_ENP_Angeboten_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updateTPNAuftragFinalOfferStatus</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Frist_FinalOffer_ignorieren" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Frist_FinalOffer_ignorieren">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.PRESUB_Path___Auftrag" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:PRESUB_Path___Auftrag">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Error_Handling" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Error_Handling">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.handleProcessErrorPathRequestGeneric</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.Clear_Pipeline_ENP" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:Clear_Pipeline_ENP">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropPcsPathAuftragResultDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.S2782" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:S2782">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.checkAngebotsannahme</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default.transitionTrigger" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsNewPathRequest_1.Default:transitionTrigger">
+    <implementation.generic type="istrigger" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsNewPathRequest.Default.subscriptionTrigger" displayName="DBPcsTpnProcesses.DBPcsNewPathRequest.Default:subscriptionTrigger">
+    <implementation.generic type="istrigger" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsDossierWithdrawDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PCSTrassenAngebotResponseDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragAutoResponseDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathIndicatorChangesDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsRejectOfferDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsNewPathRequestProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsNEFMainProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragResultDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathIndicatorChangesPaPDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsObservationsDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPhaseNotificationDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.Default.subscriptionTrigger" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.Default:subscriptionTrigger">
+    <implementation.generic type="istrigger" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathIndicatorChangesDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragResultDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsNEFMainProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsRejectOfferDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsAdhocPathRequestProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsAblehnungUeberarbeitungDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPhaseNotificationDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsDossierWithdrawDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragAutoResponseDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.POSTSUB_NEF_Subprocess_starten" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:POSTSUB_NEF_Subprocess_starten">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.S106" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:S106">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePcsPhaseHarmonizationZurueckgewiesen</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.ErrHandling_AKZ_auf_rot_setzen" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:ErrHandling_AKZ_auf_rot_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSProgressStatusNotAccepted</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Dossier_in_Phase_PathElaboration_weiterschalten" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Dossier_in_Phase_PathElaboration_weiterschalten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSPhasePathElaboration</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.PCS_Phase_Path_Elaboration_setzen_PaP" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:PCS_Phase_Path_Elaboration_setzen_PaP">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.setProcessPhasePathElaboration</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Ergebnis_Subprocess" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Ergebnis_Subprocess">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragResultDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.PCS_Notification_ActiveTimetable" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:PCS_Notification_ActiveTimetable">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPhaseNotificationDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Warten_auf_PathIndicator_Changes_PostProcessing" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Warten_auf_PathIndicator_Changes_PostProcessing">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathIndicatorChangesDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Timeout_AdHocRequestOffer_ermitteln2" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Timeout_AdHocRequestOffer_ermitteln2">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutAdHocRequestOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Timeout_AdHocRequestOffer_ermitteln1" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Timeout_AdHocRequestOffer_ermitteln1">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutAdHocRequestOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Ergebnis_Subprocess_AutoResponse_" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Ergebnis_Subprocess_AutoResponse_">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragAutoResponseDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.POSTSUB_Path___Auftrag" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:POSTSUB_Path___Auftrag">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default._Post_processing__bearbeiten" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:_Post_processing__bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsAblehnungUeberarbeitungDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.handlePostProcessingAdHoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Dossier_in_Path_aufteilen" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Dossier_in_Path_aufteilen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.splitDossierInPaths</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Fehlerpruefung_InputMapService" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Fehlerpruefung_InputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Fehlerpruefung_QueueTask</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.POSTSUB_S133" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:POSTSUB_S133">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.S3564" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:S3564">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.DossierApprovalTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.handleDossierApprovalResult</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Notification_an_TPN_versenden" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Notification_an_TPN_versenden">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsFinalOfferDetails</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.sendAnnahmeAngebotLPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Warten_auf_Angebot" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Warten_auf_Angebot">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragResultDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Fehlerpruefung_OutputMapService" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Fehlerpruefung_OutputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.dummyTask" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:dummyTask">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.AdHoc_Request_Offer" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:AdHoc_Request_Offer">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.setProcessPhaseAdHocRequestOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.PCS_Phase_PathRequest_setzen" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:PCS_Phase_PathRequest_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.setProcessPhasePathRequest</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Dossier_in_Final_Offer_weiterschalten" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Dossier_in_Final_Offer_weiterschalten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSPhaseFinalOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Clear_Pipeline_Path_Indicator_Changes" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Clear_Pipeline_Path_Indicator_Changes">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropPcsPathIndicatorChangesDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Clear_pipeline_Subprocess_models" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Clear_pipeline_Subprocess_models">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropSubprocessModels</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Ablehnung_an_TPN_versenden" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Ablehnung_an_TPN_versenden">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.sendAblehnungOhneUeberarbeitung</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Dossier_in_AdHoc_Request_Offer_weiterschalten" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Dossier_in_AdHoc_Request_Offer_weiterschalten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSPhaseAdHocRequestOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Initialize_Process" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Initialize_Process">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsAdhocPathRequestProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.DossierApprovalTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.initializeAdhocPathRequestProcess</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.ErrHandling_Abmeldungsprozess_vorbereiten" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:ErrHandling_Abmeldungsprozess_vorbereiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsAbmeldungProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.prepareAbmeldungProcess</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.PCS_Phase_Path_Elaboration_setzen" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:PCS_Phase_Path_Elaboration_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.setProcessPhasePathElaboration</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Angebot_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Angebot_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragResultDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.handleTpnAuftragFinalOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Frist_ignorieren" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Frist_ignorieren">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.AKZ_auf_rot_setzen" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:AKZ_auf_rot_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSProgressStatusNotAccepted</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.PRESUB_Path___Auftrag" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:PRESUB_Path___Auftrag">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Clear_Pipeline_PathIndicator_Changes" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Clear_Pipeline_PathIndicator_Changes">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropPcsPathIndicatorChangesDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.ErrHandling_Ergebnis_Fehlerhandling_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:ErrHandling_Ergebnis_Fehlerhandling_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.handleErrorHandlingTaskResult</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.S3563_OutputMapService" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:S3563_OutputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.DossierApprovalTaskDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Fehlerpruefung_QueueTask" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Fehlerpruefung_QueueTask">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Ergebnis_Fehlerhandling_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Ergebnis_Fehlerhandling_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.handleErrorHandlingTaskResult</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Trassenanmeldung_eingegangen" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Trassenanmeldung_eingegangen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsAdhocPathRequestProcessDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Fehlerbehandlung_InputMapService" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Fehlerbehandlung_InputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Fehlerbehandlung_QueueTask</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Clear_SubprocessModels" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Clear_SubprocessModels">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropSubprocessModels</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Clear_Pipeline_Angebot" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Clear_Pipeline_Angebot">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropPcsPathAuftragResultDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Notification_an_TPN_versenden_" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Notification_an_TPN_versenden_">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.sendAblehnungOhneUeberarbeitung</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Error_Handling" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Error_Handling">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.handleProcessErrorPathRequestGeneric</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.NEF_Meldung" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:NEF_Meldung">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsNEFMainProcessDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.PCS_Phase_Postprocessing_setzen" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:PCS_Phase_Postprocessing_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.setProcessPhasePostProcessing</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Dossier_in_PhaseAdhoc_Request_Offer_weiterschalten_" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Dossier_in_PhaseAdhoc_Request_Offer_weiterschalten_">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSPhaseAdHocRequestOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.S3563_QueueTask" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:S3563_QueueTask">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Warten_auf_Path_Elaboration" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Warten_auf_Path_Elaboration">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPhaseNotificationDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Ergebnis_Subprocess_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Ergebnis_Subprocess_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragResultDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.handleTpnAuftragResult</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Clear_pipeline_NEF_Meldung" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Clear_pipeline_NEF_Meldung">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropPcsNEFMainProcessDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.drop_SubprocessModels" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:drop_SubprocessModels">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropSubprocessModels</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Fehlerbehandlung_OutputMapService" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Fehlerbehandlung_OutputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Warten_auf_FinalOffer" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Warten_auf_FinalOffer">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPhaseNotificationDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Beanstandung_Angebote_pruefen" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Beanstandung_Angebote_pruefen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.checkFinalOffersBeanstandungenLPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Timeout_AdHocRequestOffer_ermitteln" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Timeout_AdHocRequestOffer_ermitteln">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutAdHocRequestOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Warten_auf_PathIndicator_Changes" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Warten_auf_PathIndicator_Changes">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathIndicatorChangesDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Clear_Pipeline_AutoResponse" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Clear_Pipeline_AutoResponse">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropPcsPathAuftragAutoResponseDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.PathIndicator_Changes_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:PathIndicator_Changes_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathIndicatorChangesDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.handlePathIndicatorChanges</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Dossier_in_Phase_Final_Offer_weiterschalten" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Dossier_in_Phase_Final_Offer_weiterschalten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSPhaseFinalOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.NEF_Meldung_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:NEF_Meldung_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsNEFMainProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.processNewNEFMessage</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Beanstandung_Angebote_ueberarbeiten" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Beanstandung_Angebote_ueberarbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsFinalOfferDetails</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.cloneFinalOffersBeanstandungenLPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Trassenangebot_abgelehnt" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Trassenangebot_abgelehnt">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsRejectOfferDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.PRESUB_NEF_Subprocess_starten" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:PRESUB_NEF_Subprocess_starten">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.PRESUB_S133" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:PRESUB_S133">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Resubmit_Process_Step" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Resubmit_Process_Step">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.resubmitProcessStep</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.PCS_Phase_Active_Timetable_setzen" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:PCS_Phase_Active_Timetable_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.setProcessPhaseActiveTimeTable</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Angebots_annahme_vorbereiten" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Angebots_annahme_vorbereiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.prepareAngebotsannahmeLPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Antwort_Subprocess_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Antwort_Subprocess_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragAutoResponseDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.handleTpnAuftragAutoResponse</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.PathIndicator_Changes_PostProcessing_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:PathIndicator_Changes_PostProcessing_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathIndicatorChangesDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.handlePathIndicatorChanges</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Prozess_Abbruchmeldung__vorbereiten" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Prozess_Abbruchmeldung__vorbereiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsDossierWithdrawDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsDossierWithdrawResponseDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.prepareMainProcessCancelationResponse</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Dossier_in_FinalOffer_weiterschalten_partially_harmonized" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Dossier_in_FinalOffer_weiterschalten_partially_harmonized">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSPhaseFinalOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Timeout_FinalOffer_ermitteln2" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Timeout_FinalOffer_ermitteln2">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutAdHocRequestOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Timeout_FinalOffer_ermitteln1" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Timeout_FinalOffer_ermitteln1">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutAdHocRequestOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Fehlerbehandlung_QueueTask" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Fehlerbehandlung_QueueTask">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Abmeldungsprozess_vorbereiten" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Abmeldungsprozess_vorbereiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsAbmeldungProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.prepareAbmeldungProcess</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.S51" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:S51">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsAblehnungUeberarbeitungDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.AdHoc_Request_Offer_setzen" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:AdHoc_Request_Offer_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.setProcessPhaseAdHocRequestOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.PCS_Phase_FinalOffer_setzen" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:PCS_Phase_FinalOffer_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.setProcessPhaseFinalOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Timeout_FinalOffer_ermitteln21" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Timeout_FinalOffer_ermitteln21">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutAdHocRequestOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Frist_FinalOffer_ignorieren" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Frist_FinalOffer_ignorieren">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Warten_auf_AdHoc_Request_Offer" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Warten_auf_AdHoc_Request_Offer">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPhaseNotificationDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.S25" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:S25">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsDossierWithdrawDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Timeout_FinalOffer_ermitteln11" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Timeout_FinalOffer_ermitteln11">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutAdHocRequestOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Timeout_FinalOffer_ermitteln" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Timeout_FinalOffer_ermitteln">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutAdHocRequestOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Timeout_AdHocRequestOffer_ermitteln21" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Timeout_AdHocRequestOffer_ermitteln21">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutAdHocRequestOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.S166" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:S166">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.checkDossierErrorType</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.S163" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:S163">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePcsPhaseHarmonizationZurueckgewiesen</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Timeout_AdHocRequestOffer_ermitteln11" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Timeout_AdHocRequestOffer_ermitteln11">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutAdHocRequestOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.S153" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:S153">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updateTPNAuftragFinalOfferStatus</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.S150" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:S150">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.checkAngebotsannahme</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.S141" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:S141">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.initiatePCSPartialOfferForFinalOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.S3563_InputMapService" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:S3563_InputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.DossierApprovalTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.S3563_QueueTask</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.S134" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:S134">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSProgressStatusAccepted</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.TPN_Status__Angeboten__setzen" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:TPN_Status__Angeboten__setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updateTPNAuftragDraftTimetableStatus</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Clear_Pipeline" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Clear_Pipeline">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropPcsPathAuftragResultDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.S124" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:S124">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSPhasePartialOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.Dossier_in_Phase_AdHoc_Request_Offer_weiterschalten" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:Dossier_in_Phase_AdHoc_Request_Offer_weiterschalten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSPhaseAdHocRequestOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.S117" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:S117">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSProgressStatusAccepted</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default.transitionTrigger" displayName="DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsAdhocPathRequest_1.Default:transitionTrigger">
+    <implementation.generic type="istrigger" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.Default.subscriptionTrigger" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.Default:subscriptionTrigger">
+    <implementation.generic type="istrigger" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.TpnMsgAuftragKErgebnisDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.TpnMsgAuftragZurueckgewiesenDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PCSTrassenAngebotResponseDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragNEFProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.TpnMsgAuftragsbundAbgeschlossen</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.S848" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:S848">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.bearbeitungPathAuftrag.setProcessStatusZurueckgewiesen</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.Resubmit_ProcessStep" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:Resubmit_ProcessStep">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.bearbeitungPathAuftrag.resubmitProcessStep</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.Fertig_Meldung_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:Fertig_Meldung_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.TpnMsgAuftragsbundAbgeschlossen</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragResultDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.bearbeitungPathAuftrag.processMsgAuftragsbundAbgeschlossen</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.PCS_Response_verarbeiten" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:PCS_Response_verarbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PCSTrassenAngebotResponseDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.bearbeitungPathAuftrag.handlePCSTrassenAngebotResponse</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.Fehlerbehandlung_InputMapService" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:Fehlerbehandlung_InputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.Fehlerbehandlung_QueueTask</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.Clear_Pipeline_PCS_Response" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:Clear_Pipeline_PCS_Response">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.bearbeitungPathAuftrag.pipelineMgmt.dropPCSTrassenAngebotResponseDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.Simuliere_PCS_Antwort" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:Simuliere_PCS_Antwort">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.bearbeitungPathAuftrag.simulatePCSResponse</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.Resubmit_Process_Step" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:Resubmit_Process_Step">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.resubmitProcessStep</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.Fehlerpruefung_OutputMapService" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:Fehlerpruefung_OutputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.Clear_Pipeline_KErgebnis" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:Clear_Pipeline_KErgebnis">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.bearbeitungPathAuftrag.pipelineMgmt.dropTpnMsgAuftragKErgebnisDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.K_Ergebnis_an_PCS_senden" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:K_Ergebnis_an_PCS_senden">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.bearbeitungPathAuftrag.updatePCSTrassenAngebot</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.K_Ergebnis_liegt_vor" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:K_Ergebnis_liegt_vor">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.TpnMsgAuftragKErgebnisDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.Meldung_K_Ergebnis_verarbeiten" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:Meldung_K_Ergebnis_verarbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.TpnMsgAuftragKErgebnisDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragResultDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.bearbeitungPathAuftrag.handleSubprocessKErgebnis</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.CleanUp" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:CleanUp">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.cleanUpPathAuftragProces</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.Path_eingegangen" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:Path_eingegangen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragProcessDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.NEF_Ergebnis_eingegangen" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:NEF_Ergebnis_eingegangen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragNEFProcessDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.Warten_auf_PCS_Response" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:Warten_auf_PCS_Response">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PCSTrassenAngebotResponseDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.PCS_Erfolgmeldung_an_TPN_senden" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:PCS_Erfolgmeldung_an_TPN_senden">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.bearbeitungPathAuftrag.updateTPNAuftragStatus</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.Fehlerbehandlung_QueueTask" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:Fehlerbehandlung_QueueTask">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.Fehlerbehandlung_vorbereiten" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:Fehlerbehandlung_vorbereiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragAutoResponseDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.bearbeitungPathAuftrag.prepareErrorHandlingTask</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.Fertig_Meldung_abwarten" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:Fertig_Meldung_abwarten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.TpnMsgAuftragsbundAbgeschlossen</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.Ergebnis_ErrHandling_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:Ergebnis_ErrHandling_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragAutoResponseDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.bearbeitungPathAuftrag.handleErrorHandlingTaskResult</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.Initialize_Process_NEF" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:Initialize_Process_NEF">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragNEFProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.TpnMsgAuftragKErgebnisDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.bearbeitungPathAuftrag.initializeProcessNEF</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.Fehlerbehandlung_OutputMapService" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:Fehlerbehandlung_OutputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.Zurueckweisung_Nichtkonstruier_barkeit_empfangen" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:Zurueckweisung_Nichtkonstruier_barkeit_empfangen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.TpnMsgAuftragZurueckgewiesenDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.Log_PathId" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:Log_PathId">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragProcessDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.TPN_Auftrag_aufbereiten" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:TPN_Auftrag_aufbereiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragAutoResponseDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.prepareTpnAuftragUpload</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.S982" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:S982">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.TpnMsgAuftragZurueckgewiesenDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragResultDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.prepareSubprocessResultZurueckgewiesen</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.TPN_Status_Abgeschlossen_setzen" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:TPN_Status_Abgeschlossen_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.bearbeitungPathAuftrag.setProcessStatusAbgeschlossen</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.S1270" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:S1270">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragResultDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.bearbeitungPathAuftrag.prepareSubprocessResultKErgebnis</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.TPN_Status__K_Ergebnis_empfangen__setzen" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:TPN_Status__K_Ergebnis_empfangen__setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.bearbeitungPathAuftrag.setProcessStatusKErgebnisEmpfangen</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.Fehlerpruefung_InputMapService" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:Fehlerpruefung_InputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.Fehlerpruefung_QueueTask</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.Error_Handling" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:Error_Handling">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.bearbeitungPathAuftrag.handleProcessErrorBearbeitungPathAuftrag</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.Fehlerpruefung_QueueTask" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:Fehlerpruefung_QueueTask">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.PCS_Response_Timeout_verarbeiten" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:PCS_Response_Timeout_verarbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.bearbeitungPathAuftrag.handlePCSTrassenAngebotResponseTimeout</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.TPN_Status_Eingegangen_setzen" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:TPN_Status_Eingegangen_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.bearbeitungPathAuftrag.setProcessStatusEingegangen</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.TPN_Status__Angebot_gesendet__setzen" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:TPN_Status__Angebot_gesendet__setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.bearbeitungPathAuftrag.setProcessStatusAngebotGesendet</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default.transitionTrigger" displayName="DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsBearbeitungPathAuftrag_1.Default:transitionTrigger">
+    <implementation.generic type="istrigger" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Abmeldung_vom_Hauptprozess_eingegangen" displayName="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default:Abmeldung_vom_Hauptprozess_eingegangen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsAbmeldungProcessDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Handle_Timeout" displayName="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default:Handle_Timeout">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Subprozesse_Path_Auftrag_beenden" displayName="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default:Subprozesse_Path_Auftrag_beenden">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsAbmeldungProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.abmeldungProcess.cancelPathAuftragSubprocesses</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Abmeldung_an_TPN_senden" displayName="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default:Abmeldung_an_TPN_senden">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsAbmeldungProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.cancelTpnAuftraege</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Error_Handling" displayName="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default:Error_Handling">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsAbmeldungProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.abmeldungProcess.handleProcessErrorAbmeldung</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Fehlerpruefung_OutputMapService" displayName="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default:Fehlerpruefung_OutputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Abzumeldenden_Prozess_wurde_abgebrochen" displayName="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default:Abzumeldenden_Prozess_wurde_abgebrochen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsDossierWithdrawResponseDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Abmeldung_Hauptprozess_vorbereiten" displayName="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default:Abmeldung_Hauptprozess_vorbereiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsAbmeldungProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsDossierWithdrawDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.prepareMainProcessCancelation</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Fehlerpruefung_InputMapService" displayName="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default:Fehlerpruefung_InputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Fehlerpruefung_QueueTask</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Abmeldung_von_PCS_eingegangen" displayName="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default:Abmeldung_von_PCS_eingegangen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsAbmeldungProcessDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Resubmit_Process_Step" displayName="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default:Resubmit_Process_Step">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.resubmitProcessStep</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Fehlerpruefung_QueueTask" displayName="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default:Fehlerpruefung_QueueTask">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.Abbruch_an_PCS_quittieren" displayName="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default:Abbruch_an_PCS_quittieren">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default.transitionTrigger" displayName="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsPathRequestAbmeldung_1.Default:transitionTrigger">
+    <implementation.generic type="istrigger" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.Default.subscriptionTrigger" displayName="DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.Default:subscriptionTrigger">
+    <implementation.generic type="istrigger" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsAbmeldungProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsDossierWithdrawResponseDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default.Update_TPN" displayName="DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default:Update_TPN">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.vertriebskanalTPN.updateTPN_VertriebskanalTPN</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default.Fehlerpruefung_InputMapService" displayName="DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default:Fehlerpruefung_InputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default.Fehlerpruefung_QueueTask</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default.Update_TPN_AuftragStatus" displayName="DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default:Update_TPN_AuftragStatus">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.vertriebskanalTPN.updateTPN_DossierManualProcessing</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default.Initialize_Process" displayName="DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default:Initialize_Process">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsVertriebskanalTPNProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.vertriebskanalTPN.initializeVertriebskanalTPNProcess</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default.Update_PCS" displayName="DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default:Update_PCS">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.vertriebskanalTPN.updatePCS_VertriebskanalTPN</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default.Error_Handling" displayName="DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default:Error_Handling">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsVertriebskanalTPNProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.vertriebskanalTPN.handleProcessErrorVertriebskanalTPN</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default.Fehlerpruefung_OutputMapService" displayName="DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default:Fehlerpruefung_OutputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default.Anforderung_empfangen" displayName="DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default:Anforderung_empfangen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsVertriebskanalTPNProcessDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default.Resubmit_Process_Step" displayName="DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default:Resubmit_Process_Step">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.resubmitProcessStep</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default.Fehlerpruefung_QueueTask" displayName="DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default:Fehlerpruefung_QueueTask">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default.transitionTrigger" displayName="DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcs_VertriebskanalTPN_1.Default:transitionTrigger">
+    <implementation.generic type="istrigger" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.Default.subscriptionTrigger" displayName="DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.Default:subscriptionTrigger">
+    <implementation.generic type="istrigger" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsVertriebskanalTPNProcessDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.Default.subscriptionTrigger" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.Default:subscriptionTrigger">
+    <implementation.generic type="istrigger" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsNEFMainProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsAblehnungUeberarbeitungDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathIndicatorChangesDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsLatePathRequestProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragResultDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPhaseNotificationDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragAutoResponseDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsDossierWithdrawDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsRejectOfferDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.PCS_Phase_FinalOffer_setzen" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:PCS_Phase_FinalOffer_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.setProcessPhaseFinalOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Frist_FinalOffer_ignorieren" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Frist_FinalOffer_ignorieren">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.NEF_Meldung" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:NEF_Meldung">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsNEFMainProcessDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.S3565_QueueTask" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:S3565_QueueTask">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.ErrHandling_Abmeldungsprozess_vorbereiten" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:ErrHandling_Abmeldungsprozess_vorbereiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsAbmeldungProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.prepareAbmeldungProcess</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Clear_Pipeline_PathIndicator_Changes" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Clear_Pipeline_PathIndicator_Changes">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropPcsPathIndicatorChangesDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Prozess_Abbruchmeldung__vorbereiten" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Prozess_Abbruchmeldung__vorbereiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsDossierWithdrawDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsDossierWithdrawResponseDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.prepareMainProcessCancelationResponse</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Dossier_in_PhaseLate_Request_Offer_weiterschalten" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Dossier_in_PhaseLate_Request_Offer_weiterschalten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSPhaseLateRequestOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Timeout_FinalOffer_ermitteln2" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Timeout_FinalOffer_ermitteln2">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutLateRequestOfferLPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Timeout_FinalOffer_ermitteln1" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Timeout_FinalOffer_ermitteln1">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutLateRequestOfferLPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Notification_an_TPN_versenden" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Notification_an_TPN_versenden">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsFinalOfferDetails</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.sendAnnahmeAngebotLPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Warten_auf_PathIndicator_Changes" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Warten_auf_PathIndicator_Changes">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathIndicatorChangesDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Abmeldungsprozess_vorbereiten" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Abmeldungsprozess_vorbereiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsAbmeldungProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.prepareAbmeldungProcess</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.PCS_Phase_Path_Elaboration_setzen_PaP" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:PCS_Phase_Path_Elaboration_setzen_PaP">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.setProcessPhasePathElaboration</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.S3179" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:S3179">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.checkAngebotsannahme</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Angebot_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Angebot_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragResultDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.handleTpnAuftragFinalOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.PathIndicator_Changes_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:PathIndicator_Changes_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathIndicatorChangesDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.handlePathIndicatorChanges</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Clear_Pipeline" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Clear_Pipeline">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropPcsPathAuftragResultDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.PCS_Phase_PathRequest_setzen" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:PCS_Phase_PathRequest_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.setProcessPhasePathRequest</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Clear_Pipeline_Path_Indicator_Changes" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Clear_Pipeline_Path_Indicator_Changes">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropPcsPathIndicatorChangesDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Warten_auf_Late_Request_Offer" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Warten_auf_Late_Request_Offer">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPhaseNotificationDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Clear_pipeline_NEF_Meldung" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Clear_pipeline_NEF_Meldung">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropPcsNEFMainProcessDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Dossier_in_Late_Request_Offer_weiterschalten" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Dossier_in_Late_Request_Offer_weiterschalten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSPhaseLateRequestOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Dossier_in_FinalOffer_weiterschalten_partially_harmonized" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Dossier_in_FinalOffer_weiterschalten_partially_harmonized">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSPhaseFinalOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Ablehnung_an_TPN_versenden" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Ablehnung_an_TPN_versenden">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.sendAblehnungOhneUeberarbeitung</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Timeout_LateRequestOffer_ermitteln21" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Timeout_LateRequestOffer_ermitteln21">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutLateRequestOfferLPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.S1292" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:S1292">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSPhasePartialOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Timeout_LateRequestOffer_ermitteln11" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Timeout_LateRequestOffer_ermitteln11">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutLateRequestOfferLPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Ergebnis_Subprocess" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Ergebnis_Subprocess">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragResultDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.S3451" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:S3451">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.checkDossierErrorType</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.S3436" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:S3436">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePcsPhaseHarmonizationZurueckgewiesen</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Dossier_in_Path_aufteilen" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Dossier_in_Path_aufteilen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.splitDossierInPaths</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Frist_ignorieren" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Frist_ignorieren">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Timeout_LateRequestOffer_ermitteln" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Timeout_LateRequestOffer_ermitteln">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutLateRequestOfferLPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.PCS_Phase_Path_Elaboration_setzen" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:PCS_Phase_Path_Elaboration_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.setProcessPhasePathElaboration</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Dossier_in_Phase_Final_Offer_weiterschalten" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Dossier_in_Phase_Final_Offer_weiterschalten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSPhaseFinalOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Fehlerpruefung_QueueTask" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Fehlerpruefung_QueueTask">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Angebots_annahme_vorbereiten" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Angebots_annahme_vorbereiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.prepareAngebotsannahmeLPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Ergebnis_Subprocess_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Ergebnis_Subprocess_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragResultDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.handleTpnAuftragResult</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Initialize_Process" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Initialize_Process">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsLatePathRequestProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.DossierApprovalTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.initializeLatePathRequestProcess</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Dossier_in_Final_Offer_weiterschalten" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Dossier_in_Final_Offer_weiterschalten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSPhaseFinalOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.PCS_Notification_Active_timetable" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:PCS_Notification_Active_timetable">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPhaseNotificationDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.AKZ_auf_rot_setzen" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:AKZ_auf_rot_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSProgressStatusNotAccepted</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Warten_auf_Path_Elaboration" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Warten_auf_Path_Elaboration">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPhaseNotificationDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.ErrHandling_AKZ_auf_rot_setzen" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:ErrHandling_AKZ_auf_rot_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSProgressStatusNotAccepted</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Clear_pipeline_Subprocess_models" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Clear_pipeline_Subprocess_models">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropSubprocessModels</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.NEF_Meldung_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:NEF_Meldung_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsNEFMainProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.processNewNEFMessage</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.drop_SubprocessModels" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:drop_SubprocessModels">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropSubprocessModels</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.S1195" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:S1195">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSProgressStatusAccepted</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Clear_Pipeline_AutoResponse" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Clear_Pipeline_AutoResponse">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropPcsPathAuftragAutoResponseDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Fehlerpruefung_OutputMapService" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Fehlerpruefung_OutputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.POSTSUB_S2715" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:POSTSUB_S2715">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.PRESUB_Path___Auftrag" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:PRESUB_Path___Auftrag">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Fehlerbehandlung_OutputMapService" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Fehlerbehandlung_OutputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Beanstandung_Angebote_pruefen" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Beanstandung_Angebote_pruefen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.checkFinalOffersBeanstandungenLPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Trassenangebot_abgelehnt" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Trassenangebot_abgelehnt">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsRejectOfferDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Update_Lead_IM_for_DB" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Update_Lead_IM_for_DB">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.common.updateIsDBLeadIM</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Fehlerbehandlung_InputMapService" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Fehlerbehandlung_InputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Fehlerbehandlung_QueueTask</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Late_Request_Offer" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Late_Request_Offer">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.setProcessPhaseLateRequestOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Update_the_Lead_IM_" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Update_the_Lead_IM_">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.common.updateIsDBLeadIM</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.PRESUB_S2715" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:PRESUB_S2715">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Timeout_FinalOffer_ermitteln21" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Timeout_FinalOffer_ermitteln21">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutLateRequestOfferLPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Timeout_LateRequestOffer_ermitteln2" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Timeout_LateRequestOffer_ermitteln2">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutLateRequestOfferLPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Timeout_LateRequestOffer_ermitteln1" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Timeout_LateRequestOffer_ermitteln1">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutLateRequestOfferLPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Timeout_FinalOffer_ermitteln11" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Timeout_FinalOffer_ermitteln11">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutLateRequestOfferLPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.PRESUB_NEF_Subprocess_starten" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:PRESUB_NEF_Subprocess_starten">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.PathIndicator_Changes_PostProcessing_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:PathIndicator_Changes_PostProcessing_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathIndicatorChangesDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.handlePathIndicatorChanges</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Fehlerbehandlung_QueueTask" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Fehlerbehandlung_QueueTask">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.ErrHandling_Ergebnis_Fehlerhandling_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:ErrHandling_Ergebnis_Fehlerhandling_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.handleErrorHandlingTaskResult</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Error_Handling" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Error_Handling">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.handleProcessErrorPathRequestGeneric</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.PCS_Phase_Active_Timetable_setzen" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:PCS_Phase_Active_Timetable_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.setProcessPhaseActiveTimeTable</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Update_the_DB_Lead_IM" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Update_the_DB_Lead_IM">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.common.updateIsDBLeadIM</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.S96" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:S96">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePcsPhaseHarmonizationZurueckgewiesen</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.POSTSUB_NEF_Subprocess_starten" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:POSTSUB_NEF_Subprocess_starten">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Timeout_FinalOffer_ermitteln" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Timeout_FinalOffer_ermitteln">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.calculateTimeoutLateRequestOfferLPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Antwort_Subprocess_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Antwort_Subprocess_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragAutoResponseDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.handleTpnAuftragAutoResponse</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.S50" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:S50">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsDossierWithdrawDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.S3565_InputMapService" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:S3565_InputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.DossierApprovalTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.S3565_QueueTask</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.S49" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:S49">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsAblehnungUeberarbeitungDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Warten_auf_FinalOffer" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Warten_auf_FinalOffer">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPhaseNotificationDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.POSTSUB_Path___Auftrag" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:POSTSUB_Path___Auftrag">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Fehlerpruefung_InputMapService" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Fehlerpruefung_InputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Fehlerpruefung_QueueTask</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.PCS_Phase_Postprocessing_setzen" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:PCS_Phase_Postprocessing_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.setProcessPhasePostProcessing</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.S3225" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:S3225">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updateTPNAuftragFinalOfferStatus</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Dossier_in_Phase_PathElaboration_weiterschalten" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Dossier_in_Phase_PathElaboration_weiterschalten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSPhasePathElaboration</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.S3566" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:S3566">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.DossierApprovalTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.handleDossierApprovalResult</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.TPN_Status__Angeboten__setzen" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:TPN_Status__Angeboten__setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updateTPNAuftragDraftTimetableStatus</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.dummyTask" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:dummyTask">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Trassen_anmeldung_eingegangen" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Trassen_anmeldung_eingegangen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsLatePathRequestProcessDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Warten_auf_PathIndicator_Changes_PostProcessing" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Warten_auf_PathIndicator_Changes_PostProcessing">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathIndicatorChangesDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default._Post_processing__bearbeiten" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:_Post_processing__bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsAblehnungUeberarbeitungDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.handlePostProcessingBeanstandetePath</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Resubmit_Process_Step" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Resubmit_Process_Step">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.resubmitProcessStep</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.S2797" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:S2797">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.initiatePCSPartialOfferForFinalOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Warten_auf_Angebot" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Warten_auf_Angebot">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragResultDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Ergebnis_Fehlerhandling_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Ergebnis_Fehlerhandling_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.handleErrorHandlingTaskResult</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Beanstandung_Angebote_ueberarbeiten" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Beanstandung_Angebote_ueberarbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsFinalOfferDetails</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.cloneFinalOffersBeanstandungenLPR</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.S3565_OutputMapService" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:S3565_OutputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.DossierApprovalTaskDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Clear_SubprocessModels" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Clear_SubprocessModels">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropSubprocessModels</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Clear_Pipeline_Angebot" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Clear_Pipeline_Angebot">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.pipelineMgmt.dropPcsPathAuftragResultDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Ergebnis_Subprocess_AutoResponse_" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Ergebnis_Subprocess_AutoResponse_">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsPathAuftragAutoResponseDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.S2736" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:S2736">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.updatePCSProgressStatusAccepted</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Late_Request_Offer_setzen" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Late_Request_Offer_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.setProcessPhaseLateRequestOffer</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.Notification_an_TPN_versenden_" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:Notification_an_TPN_versenden_">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStandardProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.mainPathRequestProcess.sendAblehnungOhneUeberarbeitung</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default.transitionTrigger" displayName="DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsLatePathRequest_1.Default:transitionTrigger">
+    <implementation.generic type="istrigger" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsStornierungVertrag_1.Default.Resubmit_Process_Step" displayName="DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsStornierungVertrag_1.Default:Resubmit_Process_Step">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Utils.resubmitProcessStep</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsStornierungVertrag_1.Default.Error_Handling" displayName="DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsStornierungVertrag_1.Default:Error_Handling">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStornierungVertragProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.stornierungVertragProcess.handleProcessErrorStornierung</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsStornierungVertrag_1.Default.Fehlerpruefung_OutputMapService" displayName="DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsStornierungVertrag_1.Default:Fehlerpruefung_OutputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsStornierungVertrag_1.Default.Stornierung_eingegangen" displayName="DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsStornierungVertrag_1.Default:Stornierung_eingegangen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStornierungVertragProcessDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsStornierungVertrag_1.Default.Fehlerpruefung_QueueTask" displayName="DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsStornierungVertrag_1.Default:Fehlerpruefung_QueueTask">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsStornierungVertrag_1.Default.Fehlerpruefung_InputMapService" displayName="DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsStornierungVertrag_1.Default:Fehlerpruefung_InputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsStornierungVertrag_1.Default.Fehlerpruefung_QueueTask</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsStornierungVertrag_1.Default.Stornierung_an_TPN_melden" displayName="DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsStornierungVertrag_1.Default:Stornierung_an_TPN_melden">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStornierungVertragProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.stornierungVertragProcess.sendStornierungVertragAnTPN</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsStornierungVertrag_1.Default.transitionTrigger" displayName="DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsStornierungVertrag_1.Default:transitionTrigger">
+    <implementation.generic type="istrigger" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsStornierungVertrag.Default.subscriptionTrigger" displayName="DBPcsTpnProcesses.DBPcsStornierungVertrag.Default:subscriptionTrigger">
+    <implementation.generic type="istrigger" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsStornierungVertragProcessDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsErrorHandling.Default.subscriptionTrigger" displayName="DBPcsTpnProcesses.DBPcsErrorHandling.Default:subscriptionTrigger">
+    <implementation.generic type="istrigger" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsErrorHandlingProcessDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default.Fehlerbehandlung_QueueTask" displayName="DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default:Fehlerbehandlung_QueueTask">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default.Fehlerbehandlung_InputMapService" displayName="DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default:Fehlerbehandlung_InputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default.Fehlerbehandlung_QueueTask</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default.Fehlerbehandlung_OutputMapService" displayName="DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default:Fehlerbehandlung_OutputMapService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default.Initialize_Process" displayName="DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default:Initialize_Process">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsErrorHandlingProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.errorhandling.prepareErrorHandlingTask</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default.AKZ_auf_rot_setzen" displayName="DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default:AKZ_auf_rot_setzen">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsErrorHandlingProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.errorhandling.updatePCSProgressStatusNotAccepted</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default.Ergebnis_Fehlerhandling_bearbeiten" displayName="DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default:Ergebnis_Fehlerhandling_bearbeiten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsErrorHandlingProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.errorhandling.handleErrorHandlingTaskResult</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default.Fehler_aufgetreten" displayName="DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default:Fehler_aufgetreten">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsErrorHandlingProcessDoc</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default.S45" displayName="DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default:S45">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsErrorHandlingProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.errorhandling.checkErrorMessageType</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default.S40" displayName="DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default:S40">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:DBPcsTpnDocuments.bpm.PcsErrorHandlingProcessDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnDocuments.errorhandling.ErrorHandlingTaskDoc</dependsOn>
+    <dependsOn>IS:DBPcsTpnProcessesImpl.Services.errorhandling.updatePcsPhaseHarmonizationZurueckgewiesen</dependsOn>
+  </asset>
+  <asset name="DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default.transitionTrigger" displayName="DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsErrorHandling_1.Default:transitionTrigger">
+    <implementation.generic type="istrigger" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.code" displayName="code">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.code.classes" displayName="code/classes">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.code.jars" displayName="code/jars">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.code.source" displayName="code/source">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.config" displayName="config">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.config.wmprt" displayName="config/wmprt">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.config.wmprt.DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsTpnProcesses_DBPcsAdhocPathRequest1.Default.xml" displayName="config/wmprt/DBPcsTpnProcesses.DBPcsAdhocPathRequest.DBPcsTpnProcesses_DBPcsAdhocPathRequest1.Default.xml">
+    <implementation.generic type="isfile" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.config.wmprt.DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsTpnProcesses_DBPcsBearbeitungPathAuftrag1.Default.xml" displayName="config/wmprt/DBPcsTpnProcesses.DBPcsBearbeitungPathAuftrag.DBPcsTpnProcesses_DBPcsBearbeitungPathAuftrag1.Default.xml">
+    <implementation.generic type="isfile" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.config.wmprt.DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsTpnProcesses_DBPcsErrorHandling1.Default.xml" displayName="config/wmprt/DBPcsTpnProcesses.DBPcsErrorHandling.DBPcsTpnProcesses_DBPcsErrorHandling1.Default.xml">
+    <implementation.generic type="isfile" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.config.wmprt.DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsTpnProcesses_DBPcsLatePathRequest1.Default.xml" displayName="config/wmprt/DBPcsTpnProcesses.DBPcsLatePathRequest.DBPcsTpnProcesses_DBPcsLatePathRequest1.Default.xml">
+    <implementation.generic type="isfile" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.config.wmprt.DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsTpnProcesses_DBPcsNewPathRequest1.Default.xml" displayName="config/wmprt/DBPcsTpnProcesses.DBPcsNewPathRequest.DBPcsTpnProcesses_DBPcsNewPathRequest1.Default.xml">
+    <implementation.generic type="isfile" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.config.wmprt.DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsTpnProcesses_DBPcsPathRequestAbmeldung1.Default.xml" displayName="config/wmprt/DBPcsTpnProcesses.DBPcsPathRequestAbmeldung.DBPcsTpnProcesses_DBPcsPathRequestAbmeldung1.Default.xml">
+    <implementation.generic type="isfile" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.config.wmprt.DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsTpnProcesses_DBPcsStornierungVertrag1.Default.xml" displayName="config/wmprt/DBPcsTpnProcesses.DBPcsStornierungVertrag.DBPcsTpnProcesses_DBPcsStornierungVertrag1.Default.xml">
+    <implementation.generic type="isfile" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.config.wmprt.DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcsTpnProcesses_DBPcs_VertriebskanalTPN1.Default.xml" displayName="config/wmprt/DBPcsTpnProcesses.DBPcs_VertriebskanalTPN.DBPcsTpnProcesses_DBPcs_VertriebskanalTPN1.Default.xml">
+    <implementation.generic type="isfile" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.doc" displayName="doc">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.lib" displayName="lib">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.pub" displayName="pub">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.resources" displayName="resources">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.templates" displayName="templates">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="DBPcsTpnProcesses.web" displayName="web">
+    <implementation.generic type="isfolder" />
+  </asset>
+</asset_composite>
+
